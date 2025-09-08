@@ -1,4 +1,4 @@
-// get menu variables
+// get menu variables you silly animal
 const menu = document.querySelector(".menu-logo");
 const menuCircleBg = document.querySelector(".menu-circle-bg");
 const menuLogoStroked = document.querySelector(".menu-logo-stroked_blk");
