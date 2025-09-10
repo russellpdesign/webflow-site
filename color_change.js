@@ -13,6 +13,7 @@ function getSpecs(e) {
   console.log(
     `The window was resized, so now the windowSize is equal to ${windowSize} and the footerSwitch is equal to ${footerSwitch} and the position is ${position}`
   );
+  return;
 }
 
 function changeColor(e) {
