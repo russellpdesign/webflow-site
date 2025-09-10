@@ -1,7 +1,7 @@
 const pageBody = document.querySelector(".body");
 const pageHeight = pageBody.scrollHeight;
 let windowSize = window.innerHeight;
-let footerSwitch = Math.round(document.body.scrollHeight - windowSize * 1.5);
+const getFooterTrip = () => { Math.round(document.body.scrollHeight - windowSize * 1.5) };
 const pageOffset = pageHeight - windowSize;
 let position = window.pageYOffset;
 
