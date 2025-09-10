@@ -7,6 +7,7 @@ function changeColor(e) {
   position = window.pageYOffset;
   console.log(position);
   footerSwitch = Math.round(document.body.scrollHeight - windowSize * 1.5);
+  console.log(footerSwitch);
   heroSwitch = Math.round(window.innerHeight * 0.4);
   if (position > heroSwitch) {
     pageBody.classList.add("u-theme-dark");
