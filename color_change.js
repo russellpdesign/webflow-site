@@ -1,8 +1,8 @@
 const pageBody = document.querySelector(".body");
 const pageHeight = pageBody.scrollHeight;
-const pageOffset = pageHeight - windowSize;
 let windowSize = window.innerHeight;
 let footerSwitch = Math.round(document.body.scrollHeight - windowSize * 1.5);
+const pageOffset = pageHeight - windowSize;
 
 function getSpecs(e) {
   // re-get values for window height and when are animation gets tripped for the footer section
