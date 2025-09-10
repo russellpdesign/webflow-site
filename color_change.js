@@ -3,16 +3,16 @@ const pageHeight = pageBody.scrollHeight;
 let windowSize = window.innerHeight;
 let footerSwitch = Math.round(document.body.scrollHeight - windowSize * 1.5);
 const pageOffset = pageHeight - windowSize;
+let position = window.pageYOffset;
 
 function getSpecs(e) {
   // re-get values for window height and when are animation gets tripped for the footer section
-  return [
-    windowSize,
-    footerSwitch,
-    console.log(
-      `The window was resized, so now the windowSize is equal to ${windowSize} and the footerSwitch is equal to ${footerSwitch}`
-    ),
-  ];
+  windowSize;
+  footerSwitch;
+  position;
+  console.log(
+    `The window was resized, so now the windowSize is equal to ${windowSize} and the footerSwitch is equal to ${footerSwitch} and the position is ${position}`
+  );
 }
 
 function changeColor(e) {
@@ -24,8 +24,6 @@ function changeColor(e) {
   console.log(
     `From the changeColor function, the footer switch is equal to ${footerSwitch}`
   );
-
-  let position = window.pageYOffset;
 
   heroSwitch = Math.round(window.innerHeight * 0.4);
   if (position > heroSwitch) {
