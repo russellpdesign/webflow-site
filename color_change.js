@@ -5,9 +5,9 @@ const pageOffset = pageHeight - windowSize;
 
 function changeColor(e) {
   position = window.pageYOffset;
-  console.log(position);
+  console.log(`The position is equal to ${position}`);
   footerSwitch = Math.round(document.body.scrollHeight - windowSize * 1.5);
-  console.log(footerSwitch);
+  console.log(`Footer switch is equal to ${footerSwitch}`);
   heroSwitch = Math.round(window.innerHeight * 0.4);
   if (position > heroSwitch) {
     pageBody.classList.add("u-theme-dark");
