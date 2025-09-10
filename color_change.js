@@ -8,7 +8,6 @@ function changeColor(e) {
   console.log(position);
   footerSwitch = Math.round(document.body.scrollHeight - windowSize * 1.5);
   heroSwitch = Math.round(window.innerHeight * 0.4);
-
   if (position > heroSwitch) {
     pageBody.classList.add("u-theme-dark");
     console.log("the dark theme has been triggered!");
