@@ -60,6 +60,8 @@ function menuDisplay(event) {
     email.setAttribute("style", "");
     soshIcons.setAttribute("style", "");
 
+    function addClickedMenuNav() {
+    
     // sets default time interval for our setTimeout delay, for Chrome, it should be 0, for whatever reason this allows us to animate from display: none; to display: block;
     let intervalTime = 0;
 
@@ -68,7 +70,6 @@ function menuDisplay(event) {
       intervalTime = 2;
     }
 
-    function addClickedMenuNav() {
       console.log("I should now show the contents of the menu");
       menuGrid.classList.add("clicked");
       isAbout.classList.add("clicked");
@@ -81,7 +82,7 @@ function menuDisplay(event) {
       isOpen = true;
     }
 
-    requestAnimationFrame(addClickedMenuNav, intervalTime);
+    setTimeout(addClickedMenuNav, intervalTime);
   } // end of open menu function
 
   // this part closes the menu
@@ -112,7 +113,7 @@ function menuDisplay(event) {
     console.log("isOpen should now be set back to false");
     isOpen = false;
 
-    requestAnimationFrame(clearedTimer, 1500);
+    setTimeout(clearedTimer, 1500);
 
     // this function checks if it has changed to false, and if it has, it removes that additional clicked class to allow them to be clicked again...after 1.5seconds)
     // it then ends the functions and you can wait to hear another click again
