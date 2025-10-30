@@ -66,6 +66,7 @@ function menuDisplay(event) {
     // if the browser is Firefox, there is a bug and we need to set an actual delay interval so the menu header links don't just appear without animating downwards
     if (window.navigator.userAgent.includes("Firefox")) {
       intervalTime = 2;
+      console.log("You are running firefox browser");
     }
 
     function addClickedMenuNav() {
