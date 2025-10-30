@@ -60,8 +60,6 @@ function menuDisplay(event) {
     email.setAttribute("style", "");
     soshIcons.setAttribute("style", "");
 
-    function addClickedMenuNav() {
-    
     // sets default time interval for our setTimeout delay, for Chrome, it should be 0, for whatever reason this allows us to animate from display: none; to display: block;
     let intervalTime = 0;
 
@@ -69,6 +67,8 @@ function menuDisplay(event) {
     if (window.navigator.userAgent.includes("Firefox")) {
       intervalTime = 2;
     }
+
+    function addClickedMenuNav() {
 
       console.log("I should now show the contents of the menu");
       menuGrid.classList.add("clicked");
