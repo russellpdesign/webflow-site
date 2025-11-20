@@ -5,13 +5,18 @@
   const dropdownRowsClassName = "dropdown-row-container";
   // nodelist of the rows
   // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
-  const dropdownRows = document.querySelectorAll(`.${dropdownRowsClassName}`);
+  const dropdownRows = Array.from(document.querySelectorAll(`.${dropdownRowsClassName}`));
   console.log(dropdownRows);
   let lastRowClicked;
   console.log(lastRowClicked);
   let dropdownIsOpen = false;
   
 function doStuff(e) {
+    // if our target is not the dropdown, we dont run the function)
+    let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
+    console.log(result)
+
+      return result ? (() => { 
       
       // our dropdown logic
       const parentRow = e.target.offsetParent;
@@ -110,8 +115,9 @@ function doStuff(e) {
         lastRowClicked = parentRowIndex;
         console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
-        
-        } // ends doStuff function
+
+        }) : "false" ;
+}
 
 
 dropdownRows.forEach(row => addEventListener("click", doStuff));
