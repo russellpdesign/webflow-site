@@ -9,9 +9,9 @@
   let dropdownIsOpen = false;
   
 function doStuff(e) {
-  let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);
-  const parentRow = e.target.offsetParent;
-  const parentRowIndex = dropdownRows.indexOf(parentRow);
+  let currentRowClicked = dropdownRows?.indexOf(e.target.offsetParent);
+  const parentRow = e.target?.offsetParent;
+  const parentRowIndex = dropdownRows?.indexOf(parentRow);
   console.log(parentRow);
   
   console.log(lastRowClicked, currentRowClicked);
