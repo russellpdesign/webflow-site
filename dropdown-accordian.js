@@ -10,7 +10,8 @@
   
 function doStuff(e) {
   const dropdownWrapper = document.querySelector(".dropdown-wrapper");
-  let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);const parentRow = e.target.offsetParent;
+  let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);
+  const parentRow = e.target.offsetParent;
   const parentRowIndex = dropdownRows.indexOf(parentRow);
   
   console.log(lastRowClicked, currentRowClicked);
