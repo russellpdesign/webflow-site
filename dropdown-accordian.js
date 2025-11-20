@@ -13,6 +13,7 @@
   
 function doStuff(e) {
     // if our target is not the dropdown, we dont run the function)
+    console.log(e.target.offsetParent);
     e.target.offsetParent?.classList.contains(dropdownRowsClassName) && (() => {
       // our dropdown logic
       const parentRow = e.target.offsetParent;
