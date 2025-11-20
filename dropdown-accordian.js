@@ -1,4 +1,7 @@
-// dropdown functionality horizontal scroll section
+// IIFE
+(function myFunction() {
+  
+  // dropdown functionality
   const dropdownContainerNodeList = document.querySelectorAll(".dropdown-row-container");
   const dropdownRows = Array.from(dropdownContainerNodeList);
   let lastRowClicked;
@@ -87,4 +90,6 @@ function doStuff(e) {
 
 dropdownRows.forEach(row => addEventListener("click", doStuff));
 
-// testing git push
+
+})(); // ends IIFE
+
