@@ -19,6 +19,7 @@ function doStuff(e) {
       // return result ? (() => { 
       
       // our dropdown logic
+      let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);
       const parentRow = e.target.offsetParent;
       const parentRowIndex = dropdownRows.indexOf(parentRow);
       console.log(parentRow);
