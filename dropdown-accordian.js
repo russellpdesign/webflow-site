@@ -12,11 +12,6 @@
   let dropdownIsOpen = false;
   
 function doStuff(e) {
-    // if our target is not the dropdown, we dont run the function)
-    let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
-    console.log(result)
-
-      return result ? ((e) => { 
       
       // our dropdown logic
       const parentRow = e.target.offsetParent;
@@ -115,9 +110,8 @@ function doStuff(e) {
         lastRowClicked = parentRowIndex;
         console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
-
-        }) : "false" ;
-}
+        
+        } // ends doStuff function
 
 
 dropdownRows.forEach(row => addEventListener("click", doStuff));
