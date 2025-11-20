@@ -6,6 +6,7 @@
   // nodelist of the rows
   // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
   const dropdownRows = document.querySelectorAll(`.${dropdownRowsClassName}`);
+  console.log(dropdownRows);
   let lastRowClicked;
   console.log(lastRowClicked);
   let dropdownIsOpen = false;
