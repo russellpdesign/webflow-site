@@ -2,7 +2,7 @@
 (function myFunction() {
   
 // dropdown functionality horizontal scroll section
-  const listItemsClassName = ".dropdown-row-container";
+  const listItemsClassName = "dropdown-row-container";
   const dropdownContainerNodeList = document.querySelectorAll(".dropdown-row-container");
   const dropdownRows = Array.from(dropdownContainerNodeList);
   let lastRowClicked;
