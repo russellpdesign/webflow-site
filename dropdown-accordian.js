@@ -13,11 +13,11 @@
   
 function doStuff(e) {
     // if our target is not the dropdown, we dont run the function)
-    console.log(e.target.offsetParent);
     let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
     console.log(result)
-    
-    e.target.offsetParent?.classList.contains(dropdownRowsClassName) && (() => {
+
+      return result ? (() => { 
+      
       // our dropdown logic
       const parentRow = e.target.offsetParent;
       const parentRowIndex = dropdownRows.indexOf(parentRow);
@@ -116,7 +116,7 @@ function doStuff(e) {
         console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
 
-    }); // ends if statement that checks if our variable returned undefined
+        }) : "false" ;
 }
 
 
