@@ -16,7 +16,7 @@ function doStuff(e) {
     let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
     console.log(result)
 
-      return result ? (() => { 
+      // return result ? (() => { 
       
       // our dropdown logic
       const parentRow = e.target.offsetParent;
@@ -116,7 +116,7 @@ function doStuff(e) {
         console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
 
-        }) : "false" ;
+        // }) : "false" ;
 }
 
 
