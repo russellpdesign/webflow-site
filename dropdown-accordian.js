@@ -16,6 +16,7 @@ function doStuff(e) {
     console.log(clickedElementParent);
     // if our target is not the dropdown, we dont run the function)
     let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
+    let resultOption2 = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
     // console.log(result)
 
     if ( result ) {
@@ -81,18 +82,18 @@ function doStuff(e) {
 
 
       
-      console.log(otherItemsArray);
+      // console.log(otherItemsArray);
 
 
       if ( lastRowClicked == currentRowClicked ) {
-            console.log("I clicked the same row as last time and am either trying to close the row or open it");
+            // console.log("I clicked the same row as last time and am either trying to close the row or open it");
             // OPEN ITEM
             if ( !dropdownIsOpen ) { 
                 // console.log("open the menu and set isopen to true!");
                 openAccordianItem();
             // CLOSE ITEM
             } else { 
-                console.log("close the menu!");
+                // console.log("close the menu!");
                 closeAccordianItem();
             }
         }
