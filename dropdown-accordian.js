@@ -11,6 +11,7 @@
   // console.log(lastRowClicked);
   let dropdownIsOpen = false;
   
+  
 function doStuff(e) {
     const clickedElementParent = e.target.offsetParent;
     console.log(clickedElementParent);
@@ -33,6 +34,7 @@ function doStuff(e) {
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
       const bodyTextContainer = parentRow.querySelector(".dropdown-body-text-container");
       const plusSign = parentRow.querySelector(".plus-sign-container");
+      const vertPlusPart = parentRow.querySelector(".vertical-plus-sign");
       
       const otherItemsArray = dropdownRows.filter(item => item !== dropdownRows[parentRowIndex]);
 
@@ -45,8 +47,9 @@ function doStuff(e) {
       const textOpenTransitionSettings = "height 0.5s ease";
       
       // plus sign OPEN
-      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 45deg)";
+      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
       const plusSignOpenTransitionSettings = "transform .5s ease";
+      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
 
       // Container Settings CLOSE
       const containerCloseHeightSettings = `5vw`;
@@ -59,12 +62,14 @@ function doStuff(e) {
       // plus sign CLOSE
       const plusSignCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
       const plusSignCloseTransitionSettings = "transform .5s ease";
+      const vertPlusPartCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
 
       function openAccordianItem() {
               parentRow.style.height = containerOpenHeightSettings;
               parentRow.style.transition = containerOpenTransitionSettings;
               plusSign.style.transform = plusSignOpenTransformSettings;
               plusSign.style.transition = plusSignOpenTransitionSettings;
+              vertPlusPart.style.transform = vertPlusPartOpenTransformSettings;
               // bodyTextContainer.style.height = textOpenHeightSettings;
               // bodyTextContainer.style.transition = textOpenTransitionSettings;
               dropdownIsOpen = true;
@@ -75,6 +80,7 @@ function doStuff(e) {
             parentRow.style.transition = containerCloseTransitionSettings;
             plusSign.style.transform = plusSignCloseTransformSettings;
             plusSign.style.transition = plusSignCloseTransitionSettings;
+            vertPlusPart.style.transform = vertPlusPartCloseTransformSettings
             // bodyTextContainer.style.height = textCloseHeightSettings
             // bodyTextContainer.style.transition = textCloseTransitionSettings;
             dropdownIsOpen = false;
