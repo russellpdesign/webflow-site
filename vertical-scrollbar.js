@@ -14,13 +14,13 @@ function moveScrollBar() {
     const endTrigger = triggers[2].getBoundingClientRect().top + currentPosition;
 
     const vertScrollBarStats = {
-        elementToAnimateClassName: elementToAnimateClassName,
-        triggers: triggers,
-        triggersHeight: triggersHeight,
-        currentPosition: currentPosition,
-        viewportHeight: viewportHeight,
-        startTrigger: startTrigger,
-        endTrigger: endTrigger
+        elementToAnimateClassName: `${elementToAnimateClassName}`,
+        triggers: `${triggers}`,
+        triggersHeight: `${triggersHeight}`,
+        currentPosition: `${currentPosition}`,
+        viewportHeight: `${viewportHeight}`,
+        startTrigger: `${startTrigger}`,
+        endTrigger: `${endTrigger}`,
     }
 
     console.log("------ Vertical Scrolling Slider Bar ------");
