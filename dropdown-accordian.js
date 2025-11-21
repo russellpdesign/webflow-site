@@ -24,6 +24,7 @@ function doStuff(e) {
       e.preventDefault();
       // our dropdown logic
       let currentRowClicked = dropdownRows.indexOf(clickedElement);
+      console.log(currentRowClicked);
       const headerRow = e.target.offsetParent;
       console.log(headerRow)
       const parentRow = headerRow.offsetParent;
