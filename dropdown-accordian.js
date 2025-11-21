@@ -47,7 +47,7 @@ function doStuff(e) {
       const textOpenTransitionSettings = "height 0.5s ease";
       
       // plus sign OPEN
-      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 180deg)";
+      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 0deg)";
       const plusSignOpenTransitionSettings = "transform .5s ease";
       const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
 
