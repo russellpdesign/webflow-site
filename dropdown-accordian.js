@@ -49,7 +49,7 @@ function doStuff(e) {
       // plus sign OPEN
       const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
       const plusSignOpenTransitionSettings = "transform .5s ease";
-      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
+      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 45deg)";
 
       // Container Settings CLOSE
       const containerCloseHeightSettings = `5vw`;
