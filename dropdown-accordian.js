@@ -31,11 +31,11 @@ function doStuff(e) {
       
       // console.log(lastRowClicked, currentRowClicked);
       
-      const bodyText = clickedElement.querySelector(".dropdown-body-text");
+      const bodyText = parentRow.querySelector(".dropdown-body-text");
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
-      const bodyTextContainer = clickedElement.querySelector(".dropdown-body-text-container");
-      const plusSign = clickedElement.querySelector(".plus-sign-container");
-      const vertPlusPart = clickedElement.querySelector(".vertical-plus-sign");
+      const bodyTextContainer = parentRow.querySelector(".dropdown-body-text-container");
+      const plusSign = parentRow.querySelector(".plus-sign-container");
+      const vertPlusPart = parentRow.querySelector(".vertical-plus-sign");
       
       const otherItemsArray = dropdownRows.filter(item => item !== dropdownRows[currentRowClicked]);
       console.log(otherItemsArray);
