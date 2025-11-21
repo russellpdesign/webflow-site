@@ -1,5 +1,4 @@
 // BODY COLOR CHANGE ANIMATION
-
     function changeColor(e) {
     //declare top level function variables
 
@@ -70,9 +69,4 @@
         
         console.log("The base mode has been triggered!");
     } // ends if statement for triggering light mode
-    } // ends changeColor function
-
-    // event listeners time to gather variables at certain times
-    window.addEventListener("load", changeColor);
-    window.addEventListener("scroll", changeColor);
-    window.addEventListener("resize", changeColor);
+} // ends changeColor function
