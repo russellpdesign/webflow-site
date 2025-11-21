@@ -16,11 +16,11 @@ function doStuff(e) {
     const clickedElement = e.target;
     console.log(clickedElement);
     // if our target is not the dropdown, we dont run the function)
-    let result = e.target.classList.contains(dropdownRowsClassName);
+    // let result = e.target.classList.contains(dropdownRowsClassName);
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
     // console.log(result, resultOption2);
 
-    if ( result ) {
+    // if ( result ) {
       e.preventDefault();
       // our dropdown logic
       let currentRowClicked = dropdownRows.indexOf(clickedElement);
@@ -131,7 +131,7 @@ function doStuff(e) {
         lastRowClicked = parentRowIndex;
         // console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
-    }
+    // }
 
 }
 
