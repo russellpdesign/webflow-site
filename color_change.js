@@ -1,5 +1,5 @@
 // BODY COLOR CHANGE ANIMATION
-    function changeColor(e) {
+function changeColor(e) {
     //declare top level function variables
 
     const pageBody = document.querySelector(".body");
@@ -10,7 +10,7 @@
     // the total scroll height of the page minus 100% viewport height
     let pageOffset = pageHeight - viewportHeight;
     // the pixel distance scrolled from the top of the page
-    let position = window.pageYOffset;
+    let position = window.scrollY;
 
     // Trigger point variables defined for Hero Section and Color Change scroll animations
 
@@ -30,7 +30,6 @@
     const servicesLi = document.querySelectorAll(".services-li");
     const specialtiesText = document.querySelectorAll(".specialties-heading");
     const numberText = document.querySelectorAll(".numeral");
-    const italicizedBody = document.querySelectorAll(".italicized-body");
     const aboutProjectLink = document.querySelectorAll(".view-proj-about");
     const headerText = document.querySelector(".about-header-text");
     // const footerDiv = document.querySelector(".grid-footer.is-about");
@@ -42,7 +41,6 @@
     if ((position > heroSwitch) && (position < footerSwitch)) {
         pageBody.classList.add("active");
         headerText.classList.add("active");
-        // footerDiv.classList.add("active");
         gridline1.forEach((gridline) => { gridline.classList.add("active") });
         gridline2.forEach((gridline) => { gridline.classList.add("active") });
         aboutBlurb.forEach((blurb) => { blurb.classList.add("active") });
@@ -55,18 +53,17 @@
         aboutProjectLink.forEach((link) => { link.classList.add("active") });
 
         
-        console.log("the dark theme has been triggered!");
+        // console.log("the dark theme has been triggered!");
     } // ends if statement for triggering dark mode
     
     // if we have scrolled back up, we reactivate the light mode OR if we scroll down past our footerSwitch trip line
     if ((position > footerSwitch) | (position < heroSwitch)) {
         pageBody.classList.remove("active");
         headerText.classList.remove("active");
-        // footerDiv.classList.remove("active");
         bodyText.forEach((bodyTextElement) => { bodyTextElement.classList.remove("active") });
         gridline1.forEach((gridline) => { gridline.classList.remove("active") });
         gridline2.forEach((gridline) => { gridline.classList.remove("active") });
         
-        console.log("The base mode has been triggered!");
+        // console.log("The base mode has been triggered!");
     } // ends if statement for triggering light mode
 } // ends changeColor function
