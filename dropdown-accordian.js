@@ -116,7 +116,7 @@ function doStuff(e) {
             otherItemsArray.forEach((item) => {
             item.style.height = containerCloseHeightSettings;
             const otherPlusSign = item.querySelector(".plus-sign-container");
-            const otherVertPlusSign = item.querySelector("..vertical-plus-sign");
+            const otherVertPlusSign = item.querySelector(".vertical-plus-sign");
             otherPlusSign.style.transform = plusSignCloseTransformSettings;
             otherPlusSign.style.transition = plusSignCloseTransitionSettings;
             otherVertPlusSign.style.transform = vertPlusPartCloseTransformSettings;
