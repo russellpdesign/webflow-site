@@ -48,10 +48,3 @@ function moveScrollBar() {
         elementToAnimate.style.transform = "translate3d(0, 200%, 0)";
         }
 }
-
-const throttledScrollBar = throttle(moveScrollBar, 15); // Throttle to 15ms
-
-
-document.addEventListener("scroll", throttledScrollBar);
-window.addEventListener("resize", moveScrollBar);
-document.addEventListener("DOMContentLoaded", moveScrollBar);
