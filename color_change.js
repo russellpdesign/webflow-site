@@ -21,7 +21,7 @@
     
     // since our header is not available to target when the page loads, we need to grab it once we scroll, as soon as we scroll, we are checking to see if we should change colors
     // these are all the elements that what will shift color when we go from light to dark mode
-    const gridline1 = document.querySelectorAll(".middle-grid.home");
+    const gridline1 = document.querySelectorAll(".middle-grid.is-light");
     const gridline2 = document.querySelectorAll(".horizontal-gridline");
     const aboutBlurb = document.querySelectorAll(".about-blurb");
     const bodyText = document.querySelectorAll(".body-text");
