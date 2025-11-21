@@ -2,7 +2,7 @@
 (function myFunction() {
   
   // class of the row container
-  const dropdownRowsClassName = "dropdown-header-container.is-active";
+  const dropdownRowsClassName = ".dropdown-header-container.is-active";
   // nodelist of the rows
   // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
   const dropdownRows = Array.from(document.querySelectorAll(`.${dropdownRowsClassName}`));
