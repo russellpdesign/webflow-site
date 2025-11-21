@@ -27,6 +27,7 @@ function doStuff(e) {
       const headerRow = e.target.offsetParent;
       console.log(headerRow)
       const parentRow = headerRow.offsetParent;
+      console.log(parentRow)
       const parentRowIndex = dropdownRows.indexOf(parentRow);
       console.log(parentRowIndex);
       
