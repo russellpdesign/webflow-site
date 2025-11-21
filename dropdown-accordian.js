@@ -24,19 +24,21 @@ function doStuff(e) {
       e.preventDefault();
       // our dropdown logic
       let currentRowClicked = dropdownRows.indexOf(clickedElement);
-      // const parentRow = e.target.offsetParent;
-      // const parentRowIndex = dropdownRows.indexOf(parentRow);
-      //  console.log(parentRow);
+      const parentRow = e.target.offsetParent;
+      console.log(parentRow);
+      const parentRowIndex = dropdownRows.indexOf(parentRow);
+      console.log(parentRowIndex);
       
       // console.log(lastRowClicked, currentRowClicked);
       
-      const bodyText = dropdownRows[currentRowClicked].querySelector(".dropdown-body-text");
+      const bodyText = clickedElement.querySelector(".dropdown-body-text");
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
-      const bodyTextContainer = parentRow.querySelector(".dropdown-body-text-container");
-      const plusSign = parentRow.querySelector(".plus-sign-container");
-      const vertPlusPart = parentRow.querySelector(".vertical-plus-sign");
+      const bodyTextContainer = clickedElement.querySelector(".dropdown-body-text-container");
+      const plusSign = clickedElement.querySelector(".plus-sign-container");
+      const vertPlusPart = clickedElement.querySelector(".vertical-plus-sign");
       
-      const otherItemsArray = dropdownRows.filter(item => item !== dropdownRows[parentRowIndex]);
+      const otherItemsArray = dropdownRows.filter(item => item !== dropdownRows[currentRowClicked]);
+      console.log(otherItemsArray);
 
       // Container Settings OPEN
       const containerOpenHeightSettings = `calc(5vw + ${bodyTextHeight}px`;
