@@ -12,6 +12,8 @@
   let dropdownIsOpen = false;
   
 function doStuff(e) {
+    const clickedElementParent = e.target.offsetParent;
+    console.log(clickedElementParent);
     // if our target is not the dropdown, we dont run the function)
     let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
     console.log(result)
