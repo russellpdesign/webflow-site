@@ -16,8 +16,8 @@ function doStuff(e) {
     const clickedElement = e.target;
     console.log(clickedElement);
     // if our target is not the dropdown, we dont run the function)
-    // let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
-    // let resultOption2 = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
+    let result = e.target.classList.contains(dropdownRowsClassName);
+    // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
     // console.log(result, resultOption2);
 
     if ( result ) {
