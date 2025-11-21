@@ -16,21 +16,21 @@ function doStuff(e) {
     const clickedElement = e.target;
     console.log(clickedElement);
     // if our target is not the dropdown, we dont run the function)
-    let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
-    let resultOption2 = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
-    console.log(result, resultOption2);
+    // let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
+    // let resultOption2 = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
+    // console.log(result, resultOption2);
 
     if ( result ) {
       e.preventDefault();
       // our dropdown logic
-      let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);
-      const parentRow = e.target.offsetParent;
-      const parentRowIndex = dropdownRows.indexOf(parentRow);
-     //  console.log(parentRow);
+      let currentRowClicked = dropdownRows.indexOf(clickedElement);
+      // const parentRow = e.target.offsetParent;
+      // const parentRowIndex = dropdownRows.indexOf(parentRow);
+      //  console.log(parentRow);
       
       // console.log(lastRowClicked, currentRowClicked);
       
-      const bodyText = dropdownRows[parentRowIndex].querySelector(".dropdown-body-text");
+      const bodyText = dropdownRows[currentRowClicked].querySelector(".dropdown-body-text");
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
       const bodyTextContainer = parentRow.querySelector(".dropdown-body-text-container");
       const plusSign = parentRow.querySelector(".plus-sign-container");
