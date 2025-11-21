@@ -20,7 +20,7 @@ function doStuff(e) {
     // console.log(result)
 
     if ( result ) {
-      
+      e.preventDefault();
       // our dropdown logic
       let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);
       const parentRow = e.target.offsetParent;
