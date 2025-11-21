@@ -47,9 +47,10 @@ function doStuff(e) {
       const textOpenTransitionSettings = "height 0.5s ease";
       
       // plus sign OPEN
-      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 0deg)";
+      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 180deg)";
       const plusSignOpenTransitionSettings = "transform .5s ease";
       const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
+      const vertPlusPartOpenTransitionSettings = "transform .5s ease";
 
       // Container Settings CLOSE
       const containerCloseHeightSettings = `5vw`;
@@ -63,6 +64,7 @@ function doStuff(e) {
       const plusSignCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
       const plusSignCloseTransitionSettings = "transform .5s ease";
       const vertPlusPartCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
+      const vertPlusPartCloseTransitionSettings = "transform .5s ease";
 
       function openAccordianItem() {
               parentRow.style.height = containerOpenHeightSettings;
@@ -70,6 +72,7 @@ function doStuff(e) {
               plusSign.style.transform = plusSignOpenTransformSettings;
               plusSign.style.transition = plusSignOpenTransitionSettings;
               vertPlusPart.style.transform = vertPlusPartOpenTransformSettings;
+              vertPlusPart.style.transition = vertPlusPartOpenTransitionSettings;
               // bodyTextContainer.style.height = textOpenHeightSettings;
               // bodyTextContainer.style.transition = textOpenTransitionSettings;
               dropdownIsOpen = true;
@@ -80,7 +83,8 @@ function doStuff(e) {
             parentRow.style.transition = containerCloseTransitionSettings;
             plusSign.style.transform = plusSignCloseTransformSettings;
             plusSign.style.transition = plusSignCloseTransitionSettings;
-            vertPlusPart.style.transform = vertPlusPartCloseTransformSettings
+            vertPlusPart.style.transform = vertPlusPartCloseTransformSettings;
+            vertPlusPart.style.transition = vertPlusPartCloseTransitionSettings;
             // bodyTextContainer.style.height = textCloseHeightSettings
             // bodyTextContainer.style.transition = textCloseTransitionSettings;
             dropdownIsOpen = false;
