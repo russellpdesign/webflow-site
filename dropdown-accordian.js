@@ -13,10 +13,10 @@
   
 function doStuff(e) {
     const clickedElementParent = e.target.offsetParent;
-    console.log(clickedElementParent);
+    console.log(`clickedElementParent: ${clickedElementParent}`);
     // if our target is not the dropdown, we dont run the function)
     let result = e.target.offsetParent?.classList.contains(dropdownRowsClassName);
-    console.log(result)
+    // console.log(result)
 
     if ( result ) {
       
@@ -24,9 +24,9 @@ function doStuff(e) {
       let currentRowClicked = dropdownRows.indexOf(e.target.offsetParent);
       const parentRow = e.target.offsetParent;
       const parentRowIndex = dropdownRows.indexOf(parentRow);
-      console.log(parentRow);
+     //  console.log(parentRow);
       
-      console.log(lastRowClicked, currentRowClicked);
+      // console.log(lastRowClicked, currentRowClicked);
       
       const bodyText = dropdownRows[parentRowIndex].querySelector(".dropdown-body-text");
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
