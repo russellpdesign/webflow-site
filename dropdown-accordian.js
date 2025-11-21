@@ -32,7 +32,6 @@ function doStuff(e) {
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
       const bodyTextContainer = parentRow.querySelector(".dropdown-body-text-container");
       const plusSign = parentRow.querySelector(".plus-sign-container");
-      console.log(plusSign);
       
       const otherItemsArray = dropdownRows.filter(item => item !== dropdownRows[parentRowIndex]);
 
@@ -89,7 +88,7 @@ function doStuff(e) {
             console.log("I clicked the same row as last time and am either trying to close the row or open it");
             // OPEN ITEM
             if ( !dropdownIsOpen ) { 
-                console.log("open the menu and set isopen to true!");
+                // console.log("open the menu and set isopen to true!");
                 openAccordianItem();
             // CLOSE ITEM
             } else { 
@@ -99,7 +98,7 @@ function doStuff(e) {
         }
           
         if (lastRowClicked != currentRowClicked ) {
-            console.log("I have clicked a different row than last time and should open a new row and close the others!");
+            // console.log("I have clicked a different row than last time and should open a new row and close the others!");
             openAccordianItem();
             
             // close other rows
@@ -116,7 +115,7 @@ function doStuff(e) {
           
 
         lastRowClicked = parentRowIndex;
-        console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
+        // console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
     }
 
