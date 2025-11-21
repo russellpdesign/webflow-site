@@ -116,8 +116,11 @@ function doStuff(e) {
             otherItemsArray.forEach((item) => {
             item.style.height = containerCloseHeightSettings;
             const otherPlusSign = item.querySelector(".plus-sign-container");
+            const otherVertPlusSign = item.querySelector("..vertical-plus-sign");
             otherPlusSign.style.transform = plusSignCloseTransformSettings;
             otherPlusSign.style.transition = plusSignCloseTransitionSettings;
+            otherVertPlusSign.style.transform = vertPlusPartCloseTransformSettings;
+            otherVertPlusSign.style.transition = vertPlusPartCloseTransitionSettings;
             // const othersBodyTextContainer = item.querySelector(".dropdown-body-text-container");
             // othersBodyTextContainer.style.height = textCloseHeightSettings;
             // bodyTextContainer.style.transition = textCloseTransitionSettings;
