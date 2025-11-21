@@ -9,9 +9,9 @@ function moveScrollBar() {
     const currentPosition = window.scrollY;
     const viewportHeight = window.innerHeight;
     // scrollbar should animate when the top of the section reaches the top of the viewport
-    const startTrigger = triggers[0].getBoundingClientRect().top + viewportHeight;
+    const startTrigger = triggers[0].getBoundingClientRect().top - document.body.getBoundingClientRect().top;
     // scrollbar should stop animating when the top of our last trigger reaches the top of the viewport
-    const endTrigger = triggers[2].getBoundingClientRect().bottom + viewportHeight;
+    const endTrigger = triggers[2].getBoundingClientRect().bottom - document.body.getBoundingClientRect().top;
 
     const vertScrollBarStats = {
         elementToAnimateClassName: `${elementToAnimateClassName}`,
