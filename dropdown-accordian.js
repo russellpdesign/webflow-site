@@ -16,13 +16,11 @@
   
   
 function startDropdown(e) {
-    const clickedElement = e.target.offsetParent;
+    const clickedElement = e.target?.offsetParent;
     console.log(clickedElement);
     let currentRowClicked = headerContainers.indexOf(clickedElement);
     console.log(currentRowClicked);
-    const headerRow = e.target.offsetParent;
-    console.log(headerRow)
-    const parentRow = headerRow.offsetParent;
+    const parentRow = clickedElement.offsetParent;
     console.log(parentRow)
     const parentRowIndex = rows.indexOf(parentRow);
     console.log(parentRowIndex);
