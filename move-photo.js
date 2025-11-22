@@ -165,13 +165,17 @@ function movePhoto() {
         // const startingMinusEndingHeight = 100 - heightChangeFinalPercent;
         // const startingMinusEndingWidth = 100 - widthChangeFinalPercent;
 
-        const heightPercent = 100 - (yPercent * heightChangePercent);
+        const heightPercent = 100 - (yPercent * (heightChangePercent));
         const widthPercent = 100 - (yPercent* widthChangePercent);
 
         const scaleDownImgHeightStartingValue = 120; // in percentage
         const scaleDownImgHeightEndingValue = 150; // in percentage
 
         const maxHeightPercent = scaleDownImgHeightStartingValue - (yPercent * (-((scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue) / 100)) * 100);
+
+        // cleaner formula but not as readable for troubleshooting
+        const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
+
         
         const statistics = {
         	yPercent: `${yPercent}`,
