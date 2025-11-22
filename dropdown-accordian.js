@@ -25,9 +25,9 @@ function startDropdown(e) {
     const parentRowIndex = rows.indexOf(parentRow);
     console.log(parentRowIndex);
     // if our target is not the dropdown, we dont run the function)
-    let result = parentRow.classList.contains(dropdownsRowsClassName);
-    let resultTwo = parentRow.classList.contains(headerContainerClassName);
-    let resultThree = parentRow.classList.contains(dropdownWrapperClassName);
+    let result = parentRow?.classList.contains(dropdownsRowsClassName);
+    let resultTwo = parentRow?.classList.contains(headerContainerClassName);
+    let resultThree = parentRow?.classList.contains(dropdownWrapperClassName);
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
     console.log(result, resultTwo, resultThree);
 
