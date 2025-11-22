@@ -17,23 +17,23 @@
 function doStuff(e) {
     const clickedElement = e.target.offsetParent;
     console.log(clickedElement);
+    let currentRowClicked = headerContainers.indexOf(clickedElement);
+    console.log(currentRowClicked);
+    const headerRow = e.target.offsetParent;
+    console.log(headerRow)
+    const parentRow = headerRow.offsetParent;
+    console.log(parentRow)
+    const parentRowIndex = rows.indexOf(parentRow);
+    console.log(parentRowIndex);
     // if our target is not the dropdown, we dont run the function)
-    // let result = e.target.classList.contains(dropdownRowsClassName);
+    let result = parentRow.classList.contains(dropdownsRowsClassName);
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
     // console.log(result, resultOption2);
 
-    // if ( result ) {
+    if ( result ) {
       e.preventDefault();
       // our dropdown logic
-      let currentRowClicked = headerContainers.indexOf(clickedElement);
-      console.log(currentRowClicked);
-      const headerRow = e.target.offsetParent;
-      console.log(headerRow)
-      const parentRow = headerRow.offsetParent;
-      console.log(parentRow)
-      const parentRowIndex = rows.indexOf(parentRow);
-      console.log(parentRowIndex);
-      
+
       // console.log(lastRowClicked, currentRowClicked);
       
       const bodyText = parentRow.querySelector(".dropdown-body-text");
