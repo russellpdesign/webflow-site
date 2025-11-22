@@ -28,7 +28,7 @@ function doStuff(e) {
     // if our target is not the dropdown, we dont run the function)
     let result = parentRow.classList.contains(dropdownsRowsClassName);
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
-    // console.log(result, resultOption2);
+    console.log(result);
 
     // if ( result ) {
       e.preventDefault();
