@@ -30,7 +30,7 @@ function doStuff(e) {
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
     // console.log(result, resultOption2);
 
-    if ( result ) {
+    // if ( result ) {
       e.preventDefault();
       // our dropdown logic
 
@@ -138,7 +138,7 @@ function doStuff(e) {
         lastRowClicked = parentRowIndex;
         // console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
-     }
+    //  }
 
 }
 
