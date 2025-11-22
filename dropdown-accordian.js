@@ -4,6 +4,7 @@
   // class of the row container
   const headerContainerClassName = "dropdown-header-container";
   const dropdownsRowsClassName = "dropdown-row-container";
+  const dropdownWrapperClassName = "dropdown-wrapper";
   // nodelist of the rows
   // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
@@ -28,10 +29,11 @@ function doStuff(e) {
     // if our target is not the dropdown, we dont run the function)
     let result = parentRow.classList.contains(dropdownsRowsClassName);
     let resultTwo = parentRow.classList.contains(headerContainerClassName);
+    let resultThree = parentRow.classList.contains(dropdownWrapperClassName);
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
-    console.log(result, resultTwo);
+    console.log(result, resultTwo, resultThree);
 
-    if ( result || resultTwo ) {
+    if ( result || resultTwo || resultThree) {
       e.preventDefault();
       // our dropdown logic
 
