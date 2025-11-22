@@ -2,18 +2,20 @@
 (function myFunction() {
   
   // class of the row container
-  const dropdownRowsClassName = "dropdown-header-container";
+  const headerContainerClassName = "dropdown-header-container";
+  const dropdownsRowsClassName = "dropdown-row-container";
   // nodelist of the rows
   // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
-  const dropdownRows = Array.from(document.querySelectorAll(`.${dropdownRowsClassName}`));
-  console.log(dropdownRows);
+  const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
+  const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
+  console.log(headerContainers, rows);
   let lastRowClicked;
   // console.log(lastRowClicked);
   let dropdownIsOpen = false;
   
   
 function doStuff(e) {
-    const clickedElement = e.target;
+    const clickedElement = e.target.offsetParent;
     console.log(clickedElement);
     // if our target is not the dropdown, we dont run the function)
     // let result = e.target.classList.contains(dropdownRowsClassName);
@@ -23,13 +25,13 @@ function doStuff(e) {
     // if ( result ) {
       e.preventDefault();
       // our dropdown logic
-      let currentRowClicked = dropdownRows.indexOf(clickedElement);
+      let currentRowClicked = headerContainers.indexOf(clickedElement);
       console.log(currentRowClicked);
       const headerRow = e.target.offsetParent;
       console.log(headerRow)
       const parentRow = headerRow.offsetParent;
       console.log(parentRow)
-      const parentRowIndex = dropdownRows.indexOf(parentRow);
+      const parentRowIndex = rows.indexOf(parentRow);
       console.log(parentRowIndex);
       
       // console.log(lastRowClicked, currentRowClicked);
@@ -40,7 +42,7 @@ function doStuff(e) {
       const plusSign = parentRow.querySelector(".plus-sign-container");
       const vertPlusPart = parentRow.querySelector(".vertical-plus-sign");
       
-      const otherItemsArray = dropdownRows.filter(item => item !== dropdownRows[currentRowClicked]);
+      const otherItemsArray = rows.filter(item => item !== rows[currentRowClicked]);
       console.log(otherItemsArray);
 
       // Container Settings OPEN
@@ -141,8 +143,7 @@ function doStuff(e) {
 }
 
 
-dropdownRows.forEach(row => addEventListener("click", doStuff));
+rows.forEach(row => addEventListener("click", doStuff));
 
 
 })(); // ends IIFE
-
