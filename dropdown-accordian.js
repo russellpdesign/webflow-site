@@ -20,7 +20,7 @@ function startDropdown(e) {
     console.log(clickedElement);
     let currentRowClicked = headerContainers.indexOf(clickedElement);
     console.log(currentRowClicked);
-    const parentRow = clickedElement.offsetParent;
+    const parentRow = clickedElement?.offsetParent;
     console.log(parentRow)
     const parentRowIndex = rows.indexOf(parentRow);
     console.log(parentRowIndex);
