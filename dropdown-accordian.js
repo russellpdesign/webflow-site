@@ -15,7 +15,7 @@
   let dropdownIsOpen = false;
   
   
-function doStuff(e) {
+function startDropdown(e) {
     const clickedElement = e.target.offsetParent;
     console.log(clickedElement);
     let currentRowClicked = headerContainers.indexOf(clickedElement);
@@ -147,7 +147,7 @@ function doStuff(e) {
 }
 
 
-rows.forEach(row => addEventListener("click", doStuff));
+headerContainers.forEach(headerRow => addEventListener("click", startDropdown));
 
 
 })(); // ends IIFE
