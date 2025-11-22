@@ -138,7 +138,7 @@ function doStuff(e) {
         lastRowClicked = parentRowIndex;
         // console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
         return lastRowClicked;
-    // }
+     }
 
 }
 
