@@ -165,7 +165,7 @@ function movePhoto() {
         // const startingMinusEndingHeight = 100 - heightChangeFinalPercent;
         // const startingMinusEndingWidth = 100 - widthChangeFinalPercent;
 
-        const heightPercent = 100 - (yPercent * (heightChangePercent));
+        const heightPercent = 100 - (yPercent * heightChangePercent);
         const widthPercent = 100 - (yPercent* widthChangePercent);
 
         const scaleDownImgHeightStartingValue = 120; // in percentage
