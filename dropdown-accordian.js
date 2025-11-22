@@ -31,7 +31,7 @@ function startDropdown(e) {
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
     console.log(result, resultTwo, resultThree);
 
-    if ( result || resultTwo || resultThree) {
+    if ( result || resultTwo || resultThree ) {
       e.preventDefault();
       // our dropdown logic
 
