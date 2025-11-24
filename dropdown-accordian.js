@@ -1,3 +1,5 @@
+// this document only controls how dropdown works, not when it is triggered to show / hide
+
 // IIFE
 (function myFunction() {
   
