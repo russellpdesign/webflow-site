@@ -16,6 +16,8 @@ function imageScaleDown() {
     const widthEndValue = imageWrapWidth;
     
     const endingImage = document.querySelector("#scale-down-img-after");
+    const start = lastSectionsEnd + sectionLength;
+    const end = start + (sticky100Height * 1.38);
 
     
     scaleDownImgContainer.style.willChange = "transform, height, width";
