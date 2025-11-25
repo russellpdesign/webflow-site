@@ -6,6 +6,34 @@
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
   const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
 
+  // Container Settings OPEN
+      const containerOpenHeightSettings = `calc(5vw + ${bodyTextHeight}px`;
+      const containerOpenTransitionSettings = "height 0.5s ease";
+
+      // TextBox Settings OPEN
+      const textOpenHeightSettings = "100%";
+      const textOpenTransitionSettings = "height 0.5s ease";
+      
+      // plus sign OPEN
+      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 180deg)";
+      const plusSignOpenTransitionSettings = "transform .5s ease";
+      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
+      const vertPlusPartOpenTransitionSettings = "transform .5s ease";
+
+      // Container Settings CLOSE
+      const containerCloseHeightSettings = `5vw`;
+      const containerCloseTransitionSettings = "height 0.5s ease";
+
+      // TextBox Settings CLOSE
+      const textCloseHeightSettings = "0%";
+      const textCloseTransitionSettings = "height 0.4s ease";
+      
+      // plus sign CLOSE
+      const plusSignCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
+      const plusSignCloseTransitionSettings = "transform .5s ease";
+      const vertPlusPartCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
+      const vertPlusPartCloseTransitionSettings = "transform .5s ease";
+
 function chooseFunction() {
   const currentPosition = window.scrollY;
   const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
@@ -68,34 +96,6 @@ function startDropdown(e) {
       
       const otherItemsArray = rows.filter(item => item !== rows[currentRowClicked]);
       console.log(otherItemsArray);
-
-      // Container Settings OPEN
-      const containerOpenHeightSettings = `calc(5vw + ${bodyTextHeight}px`;
-      const containerOpenTransitionSettings = "height 0.5s ease";
-
-      // TextBox Settings OPEN
-      const textOpenHeightSettings = "100%";
-      const textOpenTransitionSettings = "height 0.5s ease";
-      
-      // plus sign OPEN
-      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 180deg)";
-      const plusSignOpenTransitionSettings = "transform .5s ease";
-      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
-      const vertPlusPartOpenTransitionSettings = "transform .5s ease";
-
-      // Container Settings CLOSE
-      const containerCloseHeightSettings = `5vw`;
-      const containerCloseTransitionSettings = "height 0.5s ease";
-
-      // TextBox Settings CLOSE
-      const textCloseHeightSettings = "0%";
-      const textCloseTransitionSettings = "height 0.4s ease";
-      
-      // plus sign CLOSE
-      const plusSignCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
-      const plusSignCloseTransitionSettings = "transform .5s ease";
-      const vertPlusPartCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
-      const vertPlusPartCloseTransitionSettings = "transform .5s ease";
 
       function openAccordianItem() {
               parentRow.style.height = containerOpenHeightSettings;
