@@ -7,7 +7,7 @@
   const plusSignVerticalPartClassName = ".vertical-plus-sign";
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
   const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
-  const plusSignContainers = Array.from(ocument.querySelectorAll(`.${plusSignContainerClassName}`));
+  const plusSignContainers = Array.from(document.querySelectorAll(`.${plusSignContainerClassName}`));
   const plusSignVerts = Array.from(ocument.querySelectorAll(`.${plusSignVerticalPartClassName}`));
 
       // Container Settings CLOSE
