@@ -102,7 +102,7 @@ function movePhoto() {
     // const yPercent = 100 - (((currentPosition - rightSideRevealCheckpoint) / viewportHeight) * 100);
     
     const opacityPercent = 100 - (((currentPosition - rightSideRevealCheckpoint) / viewportHeight) * 100);
-    leftSideImageHide.style.opacity = `${opacityPercent}%`;
+    leftSideImageHide.style.opacity = "0%";
     }
     
         
