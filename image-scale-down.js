@@ -112,7 +112,7 @@ function imageScaleDown() {
        // console.log("set width to their end point values, set opacity to 0");
 
         scaleDownImgContainer.style.height = `${heightChangeFinalPercent}%`;
-        scaleDownImgContainer.style.width = `${heightChangeFinalPercent}%`;
+        scaleDownImgContainer.style.width = `${widthChangeFinalPercent}%`;
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "150%";
