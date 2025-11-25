@@ -114,6 +114,8 @@ function movePhoto() {
     if ( currentPosition < rightSideRevealCheckpoint + (viewportHeight * .9) ) {
     imageRevealSection.style.zIndex = "-1";
     }
+
+}   
     
     // // setting up our variables and trigger points for the beginning of the image scaling down to the ending point of the image scaling down
     // const startScale = end + (viewportHeight * 4);
@@ -216,5 +218,3 @@ function movePhoto() {
     //     itemImageWrap.style.opacity = "1";
     //     scaleDownImg.style.height = "150%";
     // }
-
-}

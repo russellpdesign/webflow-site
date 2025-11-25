@@ -1,9 +1,11 @@
 // this document only controls how dropdown works, not when it is triggered to show / hide
+// the trigger is located in the horizontal scroll section code
 
 // IIFE
 (function myFunction() {
   
-  // class of the row container
+  // classes representing our various clickable items
+  //  NOTE these are not querySelectors
   const headerContainerClassName = "dropdown-header-container";
   const dropdownsRowsClassName = "dropdown-row-container";
   const dropdownWrapperClassName = "dropdown-wrapper";
