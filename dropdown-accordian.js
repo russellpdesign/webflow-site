@@ -58,7 +58,7 @@ function startDropdown(e) {
     // classes representing our various clickable items
     //  NOTE these are not querySelectors
     
-    console.log(`inside startDropdown function our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
+
 
     // console.log(headerContainers, rows);
 
@@ -73,6 +73,9 @@ function startDropdown(e) {
     console.log(parentRow)
     const parentRowIndex = rows.indexOf(parentRow);
     console.log(parentRowIndex);
+
+    console.log(`inside startDropdown function our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
+
     // if our target is not the dropdown, we dont run the function)
     let result = parentRow?.classList.contains(dropdownsRowsClassName);
     let resultTwo = parentRow?.classList.contains(headerContainerClassName);
