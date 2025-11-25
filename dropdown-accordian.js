@@ -1,9 +1,11 @@
-// this document only controls how dropdown works, not when it is triggered to show / hide
-// the trigger is located in the horizontal scroll section code
+// this document only controls how dropdown works and checks if we are in the section where it is allowed to work
+// if we are not in our section, we collapse all rows
+
+  const currentPosition = window.scrollY;
+  const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
 
 // IIFE
-(function myFunction() {
-  
+(function myFunction() {  
   // classes representing our various clickable items
   //  NOTE these are not querySelectors
   const headerContainerClassName = "dropdown-header-container";
@@ -17,6 +19,20 @@
   let lastRowClicked;
   // console.log(lastRowClicked);
   let dropdownIsOpen = false;
+
+  if (currentPosition > start) {
+    startDropdown(e);
+  } 
+  
+  if (currentPosition < start) {
+    rows.forEach((row) => { row.style.height = containerCloseHeightSettings });
+    rows.forEach((row) => { row.parentRow.style.transition = containerCloseTransitionSetting });
+
+    // bodyTextContainer.style.height = textCloseHeightSettings
+    // bodyTextContainer.style.transition = textCloseTransitionSettings;
+    dropdownIsOpen = false;
+    lastRowClicked = "";
+  }
   
   
 function startDropdown(e) {
@@ -146,7 +162,7 @@ function startDropdown(e) {
     
      } // ends result if statement
 
-}
+} // ends our startDropdown function
 
 
 headerContainers.forEach(headerRow => addEventListener("click", startDropdown));
