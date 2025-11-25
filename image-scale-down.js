@@ -116,13 +116,14 @@ function imageScaleDown() {
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "150%";
-        // toggle our after img on
-        endingImage.style.opacity = "1";
+
     }
 
     if ( currentPosition > endScale + (viewportHeight * .5) ) {
        // remove our before scaling image
         scaleDownImg.style.opacity = "0";
+        // toggle our after img on
+        endingImage.style.opacity = "1";
     } else { 
         // or add it back behind
         scaleDownImg.style.opacity = "1";
