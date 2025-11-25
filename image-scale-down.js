@@ -7,6 +7,8 @@ function imageScaleDown() {
     const homeScrollSection = document.querySelector(".home-scroll-section.is-don");
     const lastSectionsEnd = homeScrollSection.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
     const start = lastSectionsEnd + sectionLength;
+    const sticky100vh =  document.querySelector(".sticky-section-100vh");
+    const sticky100Height = sticky100vh.getBoundingClientRect().height;
     const end = start + (sticky100Height * 1.38);
     
     
