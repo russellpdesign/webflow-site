@@ -1,30 +1,27 @@
 // this document only controls how dropdown works and checks if we are in the section where it is allowed to work
 // if we are not in our section, we collapse all rows
-
-  const currentPosition = window.scrollY;
-  const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
-
-// IIFE
-(function myFunction() {  
-  // classes representing our various clickable items
-  //  NOTE these are not querySelectors
   const headerContainerClassName = "dropdown-header-container";
   const dropdownsRowsClassName = "dropdown-row-container";
   const dropdownWrapperClassName = "dropdown-wrapper";
+
+function chooseFunction() {
+  const currentPosition = window.scrollY;
+  const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
+  console.log(start);
+
   // nodelist of the rows
   // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
   const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
-  console.log(headerContainers, rows);
-  let lastRowClicked;
-  // console.log(lastRowClicked);
-  let dropdownIsOpen = false;
 
   if (currentPosition > start) {
-    startDropdown(e);
+    console.log("the dropdown should now be functional")
+    headerContainers.forEach(headerRow => addEventListener("click", startDropdown));
+   // startDropdown(e);
   } 
   
   if (currentPosition < start) {
+    console.log("the dropdown should collapse all open rows")
     rows.forEach((row) => { row.style.height = containerCloseHeightSettings });
     rows.forEach((row) => { row.parentRow.style.transition = containerCloseTransitionSetting });
 
@@ -33,9 +30,18 @@
     dropdownIsOpen = false;
     lastRowClicked = "";
   }
-  
+}
   
 function startDropdown(e) {
+    // classes representing our various clickable items
+    //  NOTE these are not querySelectors
+
+
+    console.log(headerContainers, rows);
+    let lastRowClicked;
+    // console.log(lastRowClicked);
+    let dropdownIsOpen = false;
+
     const clickedElement = e.target?.offsetParent;
     console.log(clickedElement);
     let currentRowClicked = headerContainers.indexOf(clickedElement);
@@ -164,8 +170,6 @@ function startDropdown(e) {
 
 } // ends our startDropdown function
 
-
-headerContainers.forEach(headerRow => addEventListener("click", startDropdown));
-
-
-})(); // ends IIFE
+document.addEventListener("scroll", chooseFunction);
+document.addEventListener("DOMContentLoaded", chooseFunction);
+document.addEventListener("resize", chooseFunction);
