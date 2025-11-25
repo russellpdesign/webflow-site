@@ -67,9 +67,7 @@ function imageScaleDown() {
 
     if ( currentPosition > startScale ) {
         // console.log("Animate image down in size, set opacity to 1");
-        itemImageWrap.style.opacity = "1";
-        
-
+        // itemImageWrap.style.opacity = "1";
 
         // cleaner formula but not as readable for troubleshooting
         const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
@@ -114,7 +112,7 @@ function imageScaleDown() {
         scaleDownImgContainer.style.height = `${heightChangeFinalPercent}%`;
         scaleDownImgContainer.style.width = `${widthChangeFinalPercent}%`;
         scaleDownImgContainer.style.opacity = "1";
-        itemImageWrap.style.opacity = "1";
+        // itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "150%";
 
     }
