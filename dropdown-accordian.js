@@ -6,20 +6,6 @@
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
   const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
 
-  // Container Settings OPEN
-      const containerOpenHeightSettings = `calc(5vw + ${bodyTextHeight}px`;
-      const containerOpenTransitionSettings = "height 0.5s ease";
-
-      // TextBox Settings OPEN
-      const textOpenHeightSettings = "100%";
-      const textOpenTransitionSettings = "height 0.5s ease";
-      
-      // plus sign OPEN
-      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 180deg)";
-      const plusSignOpenTransitionSettings = "transform .5s ease";
-      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
-      const vertPlusPartOpenTransitionSettings = "transform .5s ease";
-
       // Container Settings CLOSE
       const containerCloseHeightSettings = `5vw`;
       const containerCloseTransitionSettings = "height 0.5s ease";
@@ -93,6 +79,20 @@ function startDropdown(e) {
       const bodyTextContainer = parentRow.querySelector(".dropdown-body-text-container");
       const plusSign = parentRow.querySelector(".plus-sign-container");
       const vertPlusPart = parentRow.querySelector(".vertical-plus-sign");
+
+      // Container Settings OPEN
+      const containerOpenHeightSettings = `calc(5vw + ${bodyTextHeight}px`;
+      const containerOpenTransitionSettings = "height 0.5s ease";
+
+      // TextBox Settings OPEN
+      const textOpenHeightSettings = "100%";
+      const textOpenTransitionSettings = "height 0.5s ease";
+      
+      // plus sign OPEN
+      const plusSignOpenTransformSettings = "rotate3D(0, 0, 1, 180deg)";
+      const plusSignOpenTransitionSettings = "transform .5s ease";
+      const vertPlusPartOpenTransformSettings = "rotate3D(0, 0, 1, 90deg)";
+      const vertPlusPartOpenTransitionSettings = "transform .5s ease";
       
       const otherItemsArray = rows.filter(item => item !== rows[currentRowClicked]);
       console.log(otherItemsArray);
