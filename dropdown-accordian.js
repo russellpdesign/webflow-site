@@ -3,16 +3,13 @@
   const headerContainerClassName = "dropdown-header-container";
   const dropdownsRowsClassName = "dropdown-row-container";
   const dropdownWrapperClassName = "dropdown-wrapper";
+  const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
+  const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
 
 function chooseFunction() {
   const currentPosition = window.scrollY;
   const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
   console.log(start);
-
-  // nodelist of the rows
-  // const dropdownContainerNodeList = document.querySelectorAll(`.${dropdownRowsClassName}`);
-  const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
-  const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
 
   if (currentPosition > start) {
     console.log("the dropdown should now be functional")
