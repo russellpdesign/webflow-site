@@ -34,7 +34,7 @@ function chooseFunction() {
   if (currentPosition < start) {
     console.log("the dropdown should collapse all open rows")
     rows.forEach((row) => { row.style.height = containerCloseHeightSettings });
-    rows.forEach((row) => { row.style.transition = containerCloseTransitionSetting });
+    rows.forEach((row) => { row.style.transition = containerCloseTransitionSettings });
 
     // bodyTextContainer.style.height = textCloseHeightSettings
     // bodyTextContainer.style.transition = textCloseTransitionSettings;
