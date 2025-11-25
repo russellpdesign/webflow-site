@@ -3,8 +3,8 @@
   const headerContainerClassName = "dropdown-header-container";
   const dropdownsRowsClassName = "dropdown-row-container";
   const dropdownWrapperClassName = "dropdown-wrapper";
-  const plusSignContainerClassName = ".plus-sign-container";
-  const plusSignVerticalPartClassName = ".vertical-plus-sign";
+  const plusSignContainerClassName = "plus-sign-container";
+  const plusSignVerticalPartClassName = "vertical-plus-sign";
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
   const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
   const plusSignContainers = Array.from(document.querySelectorAll(`.${plusSignContainerClassName}`));
