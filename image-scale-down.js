@@ -16,6 +16,7 @@ function imageScaleDown() {
     const startScale = end + (viewportHeight * 4);
     const endScale = startScale + viewportHeight;
         
+    const scaleDownImg = document.querySelector("#scale-down-img");
     const scaleDownImgContainer = document.querySelector(".big-absolute-img");
     const horizontalGridline = document.querySelector(".horizontal-gridline");
     const horizontalGridlineHeight = parseInt(window.getComputedStyle(horizontalGridline).height)
@@ -26,6 +27,8 @@ function imageScaleDown() {
     
     const heightEndValue = imageWrapHeight;
     const widthEndValue = imageWrapWidth;
+
+    
     
     const endingImage = document.querySelector("#scale-down-img-after");
 
