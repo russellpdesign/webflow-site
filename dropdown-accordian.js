@@ -24,11 +24,12 @@
       const vertPlusPartCloseTransformSettings = "rotate3D(0, 0, 1, 0deg)";
       const vertPlusPartCloseTransitionSettings = "transform .5s ease";
 
+      let lastRowClicked;
+
 function chooseFunction() {
   const currentPosition = window.scrollY;
   const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
   console.log(start);
-  let lastRowClicked;
   console.log(`inside chooseFunction our lastRowClicked: ${lastRowClicked}`);
 
   if (currentPosition > start) {
