@@ -29,7 +29,7 @@ function chooseFunction() {
   const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
   console.log(start);
   let lastRowClicked;
-  console.log(`inside chooseFunction our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
+  console.log(`inside chooseFunction our lastRowClicked: ${lastRowClicked}`);
 
   if (currentPosition > start) {
     console.log("the dropdown should now be functional")
