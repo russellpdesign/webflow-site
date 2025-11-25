@@ -30,6 +30,29 @@ function imageScaleDown() {
 
     const endingImage = document.querySelector("#scale-down-img-after");
 
+    const heightRange = viewportHeight - heightEndValue;
+    const widthRange = window.innerWidth - widthEndValue;
+        
+    const heightChangePercent = (heightRange / viewportHeight) * 100;
+    const widthChangePercent = (widthRange / window.innerWidth) * 100;
+        
+    const yPercent = ((currentPosition - startScale) / viewportHeight);
+        
+    const heightChangeFinalPercent = (heightEndValue / viewportHeight) * 100;
+    const widthChangeFinalPercent = (widthEndValue / window.innerWidth) * 100;
+        
+    // const startingMinusEndingHeight = 100 - heightChangeFinalPercent;
+    // const startingMinusEndingWidth = 100 - widthChangeFinalPercent;
+
+    const heightPercent = 100 - (yPercent * heightChangePercent);
+    const widthPercent = 100 - (yPercent * widthChangePercent);
+
+    // these are derived from the before images height and the ending value of the scaled down images height css property
+    const scaleDownImgHeightStartingValue = 120; // in percentage
+    const scaleDownImgHeightEndingValue = 150; // in percentage
+
+    const maxHeightPercent = scaleDownImgHeightStartingValue - (yPercent * (-((scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue) / 100)) * 100);
+
     scaleDownImgContainer.style.willChange = "transform, height, width";
     scaleDownImg.style.willChange = "transform, height, width";
 
@@ -46,28 +69,7 @@ function imageScaleDown() {
         // console.log("Animate image down in size, set opacity to 1");
         itemImageWrap.style.opacity = "1";
         
-        const heightRange = viewportHeight - heightEndValue;
-        const widthRange = window.innerWidth - widthEndValue;
-        
-        const heightChangePercent = (heightRange / viewportHeight) * 100;
-        const widthChangePercent = (widthRange / window.innerWidth) * 100;
-        
-        const yPercent = ((currentPosition - startScale) / viewportHeight);
-        
-        const heightChangeFinalPercent = (heightEndValue / viewportHeight) * 100;
-        const widthChangeFinalPercent = (widthEndValue / window.innerWidth) * 100;
-        
-        // const startingMinusEndingHeight = 100 - heightChangeFinalPercent;
-        // const startingMinusEndingWidth = 100 - widthChangeFinalPercent;
 
-        const heightPercent = 100 - (yPercent * heightChangePercent);
-        const widthPercent = 100 - (yPercent * widthChangePercent);
-
-        // these are derived from the before images height and the ending value of the scaled down images height css property
-        const scaleDownImgHeightStartingValue = 120; // in percentage
-        const scaleDownImgHeightEndingValue = 150; // in percentage
-
-        const maxHeightPercent = scaleDownImgHeightStartingValue - (yPercent * (-((scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue) / 100)) * 100);
 
         // cleaner formula but not as readable for troubleshooting
         const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
