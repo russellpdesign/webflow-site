@@ -41,7 +41,7 @@ function movePhoto() {
 
     if ( currentPosition > start ) {
         const percentageTraveled = currentPosition - start;
-        // calculated scroll distance using chrome dev tools and give the sticky 100 section a background color and observing its position
+        // The .38 comes from the previous sections padding of 38vh
         const wholeAmount = sticky100Height * 1.38;
         const xPercent = (percentageTraveled / wholeAmount) * 100;
 
@@ -63,7 +63,7 @@ function movePhoto() {
     }
 
     if ( currentPosition > end ) {
-    		lastImage.style.opacity = "0";
+    	lastImage.style.opacity = "0";
         homeScrollVisual.style.transform = "translate3d(-100%, 0, 0)";
         behindImageWrapper.style.transform = "translate3d(0%, 0, 0)";
         // force it in position once past (x = 100%, y is scrolldistance from end / viewportHeight since the image needs to scroll off screen as we scroll)
@@ -99,9 +99,7 @@ function movePhoto() {
     sectionBoothNumberText[0].classList.remove("is-active");
     projectTextHeading.classList.remove("is-active");
     
-    scaleDownImg.style.height = "120%";
-    
-    const yPercent = 100 - (((currentPosition - rightSideRevealCheckpoint) / viewportHeight) * 100);
+    // const yPercent = 100 - (((currentPosition - rightSideRevealCheckpoint) / viewportHeight) * 100);
     
     const opacityPercent = 100 - (((currentPosition - rightSideRevealCheckpoint) / viewportHeight) * 100);
     leftSideImageHide.style.opacity = `${opacityPercent}%`;

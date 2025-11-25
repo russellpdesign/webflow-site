@@ -28,12 +28,8 @@ function imageScaleDown() {
     const heightEndValue = imageWrapHeight;
     const widthEndValue = imageWrapWidth;
 
-    
-    
     const endingImage = document.querySelector("#scale-down-img-after");
 
-
-    
     scaleDownImgContainer.style.willChange = "transform, height, width";
     scaleDownImg.style.willChange = "transform, height, width";
 
@@ -43,7 +39,7 @@ function imageScaleDown() {
         scaleDownImgContainer.style.width = ``;
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
-        // scaleDownImg.style.height = "120%";
+        scaleDownImg.style.height = "120%";
     }
 
     if ( currentPosition > startScale ) {
@@ -65,8 +61,9 @@ function imageScaleDown() {
         // const startingMinusEndingWidth = 100 - widthChangeFinalPercent;
 
         const heightPercent = 100 - (yPercent * heightChangePercent);
-        const widthPercent = 100 - (yPercent* widthChangePercent);
+        const widthPercent = 100 - (yPercent * widthChangePercent);
 
+        // these are derived from the before images height and the ending value of the scaled down images height css property
         const scaleDownImgHeightStartingValue = 120; // in percentage
         const scaleDownImgHeightEndingValue = 150; // in percentage
 
@@ -77,6 +74,7 @@ function imageScaleDown() {
 
         
         const statistics = {
+            currentPosition: `${currentPosition}`,
         	yPercent: `${yPercent}`,
             heightChangeFinalPercent: `${heightChangeFinalPercent}`,
             widthChangeFinalPercent: `${widthChangeFinalPercent}`,
@@ -100,7 +98,7 @@ function imageScaleDown() {
         scaleDownImgContainer.style.height = `${heightPercent}%`;
         scaleDownImgContainer.style.minHeight = `${heightChangeFinalPercent}%`;
         scaleDownImgContainer.style.width = `${widthPercent}%`;
-				scaleDownImgContainer.style.minWidth = `${widthChangeFinalPercent}%`;
+		scaleDownImgContainer.style.minWidth = `${widthChangeFinalPercent}%`;
 
         // scale down image fitment / img inside the container
         scaleDownImg.style.height = `${maxHeightPercent}%`;
