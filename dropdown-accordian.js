@@ -178,3 +178,4 @@ function startDropdown(e) {
 document.addEventListener("scroll", chooseFunction);
 document.addEventListener("DOMContentLoaded", chooseFunction);
 document.addEventListener("resize", chooseFunction);
+document.addEventListener("click", chooseFunction);
