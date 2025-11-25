@@ -25,6 +25,8 @@
       const vertPlusPartCloseTransitionSettings = "transform .5s ease";
 
       let lastRowClicked;
+      // initialize the setting of our dropdown to false
+      let dropdownIsOpen;
 
 function chooseFunction() {
   const currentPosition = window.scrollY;
@@ -45,10 +47,9 @@ function chooseFunction() {
     plusSignContainers.forEach((container) => { container.style.transform = plusSignCloseTransformSettings});
     plusSignContainers.forEach((container) => { container.style.transition = plusSignCloseTransitionSettings});
     plusSignVerts.forEach((vert) => { vert.style.transform = vertPlusPartCloseTransformSettings });
-    lusSignVerts.forEach((vert) => { vert.style.transition = vertPlusPartCloseTransitionSettings });
+    plusSignVerts.forEach((vert) => { vert.style.transition = vertPlusPartCloseTransitionSettings });
 
-    // bodyTextContainer.style.height = textCloseHeightSettings
-    // bodyTextContainer.style.transition = textCloseTransitionSettings;
+    // result dropdownIsOpen to be false, as all the rows are closed, and set last row clicked to a blank string
     dropdownIsOpen = false;
     lastRowClicked = "";
   }
@@ -57,13 +58,7 @@ function chooseFunction() {
 function startDropdown(e) {
     // classes representing our various clickable items
     //  NOTE these are not querySelectors
-    
-
-
     // console.log(headerContainers, rows);
-
-    
-    let dropdownIsOpen = false;
 
     const clickedElement = e.target?.offsetParent;
     console.log(clickedElement);
@@ -175,7 +170,7 @@ function startDropdown(e) {
 
         lastRowClicked = parentRowIndex;
         console.log(`inside our dropdown function after we have ran our function lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
-        return lastRowClicked;
+        return lastRowClicked, dropdownIsOpen;
     
      } // ends result if statement
 
