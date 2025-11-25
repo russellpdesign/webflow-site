@@ -28,6 +28,8 @@ function chooseFunction() {
   const currentPosition = window.scrollY;
   const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
   console.log(start);
+  let lastRowClicked;
+  console.log(`inside chooseFunction our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
 
   if (currentPosition > start) {
     console.log("the dropdown should now be functional")
@@ -54,11 +56,12 @@ function chooseFunction() {
 function startDropdown(e) {
     // classes representing our various clickable items
     //  NOTE these are not querySelectors
+    
+    console.log(`inside startDropdown function our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
 
+    // console.log(headerContainers, rows);
 
-    console.log(headerContainers, rows);
-    let lastRowClicked;
-    // console.log(lastRowClicked);
+    
     let dropdownIsOpen = false;
 
     const clickedElement = e.target?.offsetParent;
@@ -80,7 +83,6 @@ function startDropdown(e) {
       e.preventDefault();
       // our dropdown logic
 
-      // console.log(lastRowClicked, currentRowClicked);
       
       const bodyText = parentRow.querySelector(".dropdown-body-text");
       const bodyTextHeight = bodyText.getBoundingClientRect().height;
@@ -132,7 +134,7 @@ function startDropdown(e) {
 
       
       // console.log(otherItemsArray);
-
+ 
 
       if ( lastRowClicked == currentRowClicked ) {
             // console.log("I clicked the same row as last time and am either trying to close the row or open it");
@@ -168,7 +170,7 @@ function startDropdown(e) {
           
 
         lastRowClicked = parentRowIndex;
-        // console.log(`dropdownIsOpen: ${dropdownIsOpen}`);
+        console.log(`inside our dropdown function after we have ran our function lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
         return lastRowClicked;
     
      } // ends result if statement
