@@ -4,10 +4,11 @@ function imageScaleDown() {
     const triggersHeight = triggers[0].getBoundingClientRect().height * triggers.length;
     // set that value to our sectionLength to make our code more readable
     const sectionLength = triggersHeight;
+    const homeScrollSection = document.querySelector(".home-scroll-section.is-don");
     const lastSectionsEnd = homeScrollSection.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
     const start = lastSectionsEnd + sectionLength;
     const end = start + (sticky100Height * 1.38);
-    const homeScrollSection = document.querySelector(".home-scroll-section.is-don");
+    
     
     const currentPosition = window.scrollY;
     const startScale = end + (viewportHeight * 4);
