@@ -10,7 +10,7 @@ function imageScaleDown() {
     const sticky100vh =  document.querySelector(".sticky-section-100vh");
     const sticky100Height = sticky100vh.getBoundingClientRect().height;
     const end = start + (sticky100Height * 1.38);
-    
+    const viewportHeight = window.innerHeight;
     
     const currentPosition = window.scrollY;
     const startScale = end + (viewportHeight * 4);
