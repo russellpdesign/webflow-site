@@ -1,5 +1,7 @@
 function imageScaleDown() {
     // setting up our variables and trigger points for the beginning of the image scaling down to the ending point of the image scaling down
+    const start = lastSectionsEnd + sectionLength;
+    const end = start + (sticky100Height * 1.38);
     const currentPosition = window.scrollY;
     const startScale = end + (viewportHeight * 4);
     const endScale = startScale + viewportHeight;
@@ -16,8 +18,7 @@ function imageScaleDown() {
     const widthEndValue = imageWrapWidth;
     
     const endingImage = document.querySelector("#scale-down-img-after");
-    const start = lastSectionsEnd + sectionLength;
-    const end = start + (sticky100Height * 1.38);
+
 
     
     scaleDownImgContainer.style.willChange = "transform, height, width";
