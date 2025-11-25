@@ -104,7 +104,7 @@ function imageScaleDown() {
 
         // scale down image fitment / img inside the container
         scaleDownImg.style.height = `${maxHeightPercent}%`;
-        
+        endingImage.style.opacity = "0";
     }
 
 
@@ -116,5 +116,15 @@ function imageScaleDown() {
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "150%";
+        // toggle our after img on
+        endingImage.style.opacity = "1";
+    }
+
+    if ( currentPosition > endScale + (viewportHeight * .5) ) {
+       // remove our before scaling image
+        scaleDownImg.style.opacity = "0";
+    } else { 
+        // or add it back behind
+        scaleDownImg.style.opacity = "1";
     }
 }
