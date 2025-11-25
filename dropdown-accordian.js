@@ -3,8 +3,12 @@
   const headerContainerClassName = "dropdown-header-container";
   const dropdownsRowsClassName = "dropdown-row-container";
   const dropdownWrapperClassName = "dropdown-wrapper";
+  const plusSignContainerClassName = ".plus-sign-container";
+  const plusSignVerticalPartClassName = ".vertical-plus-sign";
   const headerContainers = Array.from(document.querySelectorAll(`.${headerContainerClassName}`));
   const rows = Array.from(document.querySelectorAll(`.${dropdownsRowsClassName}`));
+  const plusSignContainers = Array.from(ocument.querySelectorAll(`.${plusSignContainerClassName}`));
+  const plusSignVerts = Array.from(ocument.querySelectorAll(`.${plusSignVerticalPartClassName}`));
 
       // Container Settings CLOSE
       const containerCloseHeightSettings = `5vw`;
@@ -35,6 +39,10 @@ function chooseFunction() {
     console.log("the dropdown should collapse all open rows")
     rows.forEach((row) => { row.style.height = containerCloseHeightSettings });
     rows.forEach((row) => { row.style.transition = containerCloseTransitionSettings });
+    plusSignContainers.forEach((container) => { container.style.transform = plusSignCloseTransformSettings});
+    plusSignContainers.forEach((container) => { container.style.transition = plusSignCloseTransitionSettings});
+    plusSignVerts.forEach((vert) => { vert.style.transform = vertPlusPartCloseTransformSettings });
+    lusSignVerts.forEach((vert) => { vert.style.transition = vertPlusPartCloseTransitionSettings });
 
     // bodyTextContainer.style.height = textCloseHeightSettings
     // bodyTextContainer.style.transition = textCloseTransitionSettings;
