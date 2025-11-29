@@ -82,6 +82,7 @@ function imageScaleDown() {
         scaleDownImgContainerWillChangeSettings: scaleDownImgContainerWillChangeSettings,
         scaleDownImgWillChangeSettings: scaleDownImgWillChangeSettings,
         testingAddingWillChangeBeforeAndAfters: scaleDownImgWillChangeSettings + "transform, height, width",
+        desiredWillChangeSettings: desiredWillChangeSettings,
     }
 
     console.log("------ Scaling Image Section ------");
