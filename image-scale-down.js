@@ -81,7 +81,7 @@ function imageScaleDown() {
         scaleDownImgHeightPercentSimplified: `${scaleDownImgHeightPercentSimplified}`,
         scaleDownImgContainerWillChangeSettings: scaleDownImgContainerWillChangeSettings,
         scaleDownImgWillChangeSettings: scaleDownImgWillChangeSettings,
-        testingAddingWillChangeBeforeAndAfters: scaleDownImgWillChangeSettings + "transform, height, width",
+        testingAddingWillChangeBeforeAndAfters: `${scaleDownImgWillChangeSettings}, ${desiredWillChangeSettings}`,
         desiredWillChangeSettings: desiredWillChangeSettings,
     }
 
