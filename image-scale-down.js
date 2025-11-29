@@ -1,4 +1,11 @@
+// flags set
+let currentPosition = window.scrollY;
+let ticking = false;
+
+// handles animation logic
 function imageScaleDown() {
+    currentPosition;
+    console.log(`inside of imageScaleDown function our currentPosition is: ${currentPosition}`);
     // setting up our variables and trigger points for the beginning of the image scaling down to the ending point of the image scaling down
     const triggers = document.querySelectorAll(".overview_trigger");
     const triggersHeight = triggers[0].getBoundingClientRect().height * triggers.length;
@@ -11,8 +18,7 @@ function imageScaleDown() {
     const sticky100Height = sticky100vh.getBoundingClientRect().height;
     const end = start + (sticky100Height * 1.38);
     const viewportHeight = window.innerHeight;
-    
-    const currentPosition = window.scrollY;
+
     const startScale = end + (viewportHeight * 4);
     const endScale = startScale + viewportHeight;
         
@@ -40,18 +46,18 @@ function imageScaleDown() {
         
     const heightChangeFinalPercent = (heightEndValue / viewportHeight) * 100;
     const widthChangeFinalPercent = (widthEndValue / window.innerWidth) * 100;
-        
-    // const startingMinusEndingHeight = 100 - heightChangeFinalPercent;
-    // const startingMinusEndingWidth = 100 - widthChangeFinalPercent;
 
-    const heightPercent = 100 - (yPercent * heightChangePercent);
-    const widthPercent = 100 - (yPercent * widthChangePercent);
+    const scaleDownImgContainerHeightPercent = 100 - (yPercent * heightChangePercent);
+    const scaleDownImgContainerWidthPercent = 100 - (yPercent * widthChangePercent);
 
     // these are derived from the before images height and the ending value of the scaled down images height css property
     const scaleDownImgHeightStartingValue = 120; // in percentage
     const scaleDownImgHeightEndingValue = 150; // in percentage
 
-    const maxHeightPercent = scaleDownImgHeightStartingValue - (yPercent * (-((scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue) / 100)) * 100);
+    const scaleDownImgHeightPercent = scaleDownImgHeightStartingValue - (yPercent * (-((scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue) / 100)) * 100);
+
+    // cleaner formula but not as readable for troubleshooting
+    const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
 
     scaleDownImgContainer.style.willChange = "transform, height, width";
     scaleDownImg.style.willChange = "transform, height, width";
@@ -66,12 +72,6 @@ function imageScaleDown() {
     }
 
     if ( currentPosition > startScale ) {
-        // console.log("Animate image down in size, set opacity to 1");
-        // itemImageWrap.style.opacity = "1";
-
-        // cleaner formula but not as readable for troubleshooting
-        const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
-
         
         const statistics = {
             currentPosition: `${currentPosition}`,
@@ -82,48 +82,60 @@ function imageScaleDown() {
             widthChangePercent: `${widthChangePercent}`,
             heightRange: `${heightRange}`, 
             widthRange: `${widthRange}`,
-            heightPercent: `${heightPercent}`,
-            widthPercent: `${widthPercent}`,
-            maxHeightPercent: maxHeightPercent,
+            scaleDownImgContainerHeightPercent: `${scaleDownImgContainerHeightPercent}`,
+            scaleDownImgContainerWidthPercent: `${scaleDownImgContainerWidthPercent}`,
+            scaleDownImgHeightPercent: scaleDownImgHeightPercent,
             startScale: startScale,
             endScale: endScale,
-            // startingMinusEndingHeight: `${startingMinusEndingHeight}`,
-            // startingMinusEndingWidth: `${startingMinusEndingWidth}`
+            maxHeightPercentSimplified: `${maxHeightPercentSimplified}`,
+            startingMinusEndingHeight: `${startingMinusEndingHeight}`,
+            startingMinusEndingWidth: `${startingMinusEndingWidth}`
         }
         
         console.log("------ Scaling Image Section ------");
         console.table(statistics);
 
         // scale down the image container, failsafe fallback of opacity 1 if it doesnt animate perfectly to there from before or after
-        scaleDownImgContainer.style.height = `${heightPercent}%`;
+        scaleDownImgContainer.style.height = `${scaleDownImgContainerHeightPercent}%`;
         scaleDownImgContainer.style.minHeight = `${heightChangeFinalPercent}%`;
-        scaleDownImgContainer.style.width = `${widthPercent}%`;
+        scaleDownImgContainer.style.width = `${scaleDownImgContainerWidthPercent}%`;
 		scaleDownImgContainer.style.minWidth = `${widthChangeFinalPercent}%`;
 
         // scale down image fitment / img inside the container
-        scaleDownImg.style.height = `${maxHeightPercent}%`;
+        scaleDownImg.style.height = `${scaleDownImgHeightPercent}%`;
         endingImage.style.opacity = "0";
     }
 
 
     if ( currentPosition > endScale ) {
        // console.log("set width to their end point values, set opacity to 0");
-
         scaleDownImgContainer.style.height = `${heightChangeFinalPercent}%`;
         scaleDownImgContainer.style.width = `${widthChangeFinalPercent}%`;
         scaleDownImgContainer.style.opacity = "1";
-        // itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "150%";
-
     }
 
     if ( currentPosition > endScale + (viewportHeight * .5) ) {
        // remove our before scaling image
         scaleDownImg.style.opacity = "0";
-        // toggle our after img on
+        // replace with our after img
         endingImage.style.opacity = "1";
     } else { 
         // or add it back behind
         scaleDownImg.style.opacity = "1";
     }
+
+    // reset ticking back to false
+    ticking = false;
 }
+
+function imageScaleDownScrollHandler(eventObject) {
+    currentPosition = window.scrollY;
+
+    if(!ticking) {
+        window.requestAnimationFrame(imageScaleDown);
+        ticking = true;
+    }
+};
+
+document.addEventListener('scroll', imageScaleDownScrollHandler);
