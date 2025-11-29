@@ -55,7 +55,6 @@ function imageScaleDown() {
     // cleaner formula but not as readable for troubleshooting
     const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
 
-            
     const statistics = {
         currentPosition: `${currentPosition}`,
         yPercent: `${yPercent}`,
