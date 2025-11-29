@@ -89,8 +89,8 @@ function imageScaleDown() {
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "120%";
-        scaleDownImgContainer.style.willChange = "transform, height, width";
-        scaleDownImg.style.willChange = "transform, height, width";
+        // scaleDownImgContainer.style.willChange = "transform, height, width";
+        // scaleDownImg.style.willChange = "transform, height, width";
     }
 
     if ( currentPosition > startScale ) {
