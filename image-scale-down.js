@@ -1,7 +1,3 @@
-// flags set
-let currentPosition = window.scrollY;
-let ticking = false;
-
 // handles animation logic
 function imageScaleDown() {
     currentPosition;
@@ -137,5 +133,3 @@ function imageScaleDownScrollHandler(eventObject) {
         ticking = true;
     }
 };
-
-document.addEventListener('scroll', imageScaleDownScrollHandler);
