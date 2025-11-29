@@ -55,8 +55,12 @@ function imageScaleDown() {
     // cleaner formula but not as readable for troubleshooting
     const scaleDownImgHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
 
+    const willChangeAutoSetting = "auto";
     const scaleDownImgContainerWillChangeSettings = window.getComputedStyle(scaleDownImgContainer).willChange;
     const scaleDownImgWillChangeSettings = window.getComputedStyle(scaleDownImg).willChange;
+    const applyWillChangeSettingsEntry = startScale - viewportHeight;
+    const applyWillChangeSettingsExit = endScale + viewportHeight;
+    const desiredWillChangeSettings = "transform, height, width";
 
     const statistics = {
         currentPosition: `${currentPosition}`,
@@ -70,6 +74,8 @@ function imageScaleDown() {
         scaleDownImgContainerHeightPercent: `${scaleDownImgContainerHeightPercent}`,
         scaleDownImgContainerWidthPercent: `${scaleDownImgContainerWidthPercent}`,
         scaleDownImgHeightPercent: scaleDownImgHeightPercent,
+        applyWillChangeSettingsEntry: applyWillChangeSettingsEntry,
+        applyWillChangeSettingsExit: applyWillChangeSettingsExit,
         startScale: startScale,
         endScale: endScale,
         scaleDownImgHeightPercentSimplified: `${scaleDownImgHeightPercentSimplified}`,
@@ -81,16 +87,28 @@ function imageScaleDown() {
     console.log("------ Scaling Image Section ------");
     console.table(statistics);
 
-    // if our location is before our scaling transformation, ensure our style properties are set to their pre-transformation settings
-    // this is mainly to handle the page if we scroll back up before our scale transformation
+    // if our location is before our scaling transformation, ensure our style properties are set to their pre-transformation settings (this is mainly to handle the page if we scroll back up before our scale transformation)
     if( currentPosition < startScale ) {
         scaleDownImgContainer.style.height = ``;
         scaleDownImgContainer.style.width = ``;
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "120%";
-        // scaleDownImgContainer.style.willChange = "transform, height, width";
-        // scaleDownImg.style.willChange = "transform, height, width";
+    }
+
+    // as we approach our starting point or we back peddle toward our ending point, we update our willChange css property to prep the browser for our animation
+    if( currentPosition > applyWillChangeSettings && currentPosition < applyWillChangeSettingsExit ) {
+        // compare the computed value to a setting of auto, if they are auto replace auto with the following
+        if ( scaleDownImgContainerWillChangeSettings === willChangeAutoSetting && scaleDownImgWillChangeSettings === willChangeAutoSetting ) {
+            scaleDownImgContainer.style.willChange = "transform, height, width";
+            scaleDownImg.style.willChange = "transform, height, width";
+        }
+        // if the current willChange value is not auto and not our desired settings, append the settings to include our desired settings
+        if ( scaleDownImgContainerWillChangeSettings !== willChangeAutoSetting && scaleDownImgWillChangeSettings !== willChangeAutoSetting && scaleDownImgContainerWillChangeSettings !== desiredWillChangeSettings && scaleDownImgWillChangeSettings !== desiredWillChangeSettings ) {
+        // if they are not auto, append the setting with the additional settings (if there are duplicate properties delineated the browser will read the duplicate and still register it)
+            scaleDownImgContainer.style.willChange = `${scaleDownImgContainerWillChangeSettings}, ${desiredWillChangeSettings}`;
+            scaleDownImg.style.willChange = `${scaleDownImgWillChangeSettings}, ${desiredWillChangeSettings}`;
+        }
     }
 
     if ( currentPosition > startScale ) {
