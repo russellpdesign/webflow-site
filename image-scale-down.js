@@ -100,8 +100,8 @@ function imageScaleDown() {
     if( currentPosition > applyWillChangeSettings && currentPosition < applyWillChangeSettingsExit ) {
         // compare the computed value to a setting of auto, if they are auto replace auto with the following
         if ( scaleDownImgContainerWillChangeSettings === willChangeAutoSetting && scaleDownImgWillChangeSettings === willChangeAutoSetting ) {
-            scaleDownImgContainer.style.willChange = "transform, height, width";
-            scaleDownImg.style.willChange = "transform, height, width";
+            scaleDownImgContainer.style.willChange = `${desiredWillChangeSettings}`;
+            scaleDownImg.style.willChange = `${desiredWillChangeSettings}`;
         }
         // if the current willChange value is not auto and not our desired settings, append the settings to include our desired settings
         if ( scaleDownImgContainerWillChangeSettings !== willChangeAutoSetting && scaleDownImgWillChangeSettings !== willChangeAutoSetting && scaleDownImgContainerWillChangeSettings !== desiredWillChangeSettings && scaleDownImgWillChangeSettings !== desiredWillChangeSettings ) {
