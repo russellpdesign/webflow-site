@@ -55,6 +55,29 @@ function imageScaleDown() {
     // cleaner formula but not as readable for troubleshooting
     const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
 
+            
+    const statistics = {
+        currentPosition: `${currentPosition}`,
+        yPercent: `${yPercent}`,
+        heightChangeFinalPercent: `${heightChangeFinalPercent}`,
+        widthChangeFinalPercent: `${widthChangeFinalPercent}`,
+        heightChangePercent: `${heightChangePercent}`,
+        widthChangePercent: `${widthChangePercent}`,
+        heightRange: `${heightRange}`, 
+        widthRange: `${widthRange}`,
+        scaleDownImgContainerHeightPercent: `${scaleDownImgContainerHeightPercent}`,
+        scaleDownImgContainerWidthPercent: `${scaleDownImgContainerWidthPercent}`,
+        scaleDownImgHeightPercent: scaleDownImgHeightPercent,
+        startScale: startScale,
+        endScale: endScale,
+        maxHeightPercentSimplified: `${maxHeightPercentSimplified}`,
+        startingMinusEndingHeight: `${startingMinusEndingHeight}`,
+        startingMinusEndingWidth: `${startingMinusEndingWidth}`
+    }
+        
+    console.log("------ Scaling Image Section ------");
+    console.table(statistics);
+
     scaleDownImgContainer.style.willChange = "transform, height, width";
     scaleDownImg.style.willChange = "transform, height, width";
 
@@ -68,29 +91,6 @@ function imageScaleDown() {
     }
 
     if ( currentPosition > startScale ) {
-        
-        const statistics = {
-            currentPosition: `${currentPosition}`,
-        	yPercent: `${yPercent}`,
-            heightChangeFinalPercent: `${heightChangeFinalPercent}`,
-            widthChangeFinalPercent: `${widthChangeFinalPercent}`,
-            heightChangePercent: `${heightChangePercent}`,
-            widthChangePercent: `${widthChangePercent}`,
-            heightRange: `${heightRange}`, 
-            widthRange: `${widthRange}`,
-            scaleDownImgContainerHeightPercent: `${scaleDownImgContainerHeightPercent}`,
-            scaleDownImgContainerWidthPercent: `${scaleDownImgContainerWidthPercent}`,
-            scaleDownImgHeightPercent: scaleDownImgHeightPercent,
-            startScale: startScale,
-            endScale: endScale,
-            maxHeightPercentSimplified: `${maxHeightPercentSimplified}`,
-            startingMinusEndingHeight: `${startingMinusEndingHeight}`,
-            startingMinusEndingWidth: `${startingMinusEndingWidth}`
-        }
-        
-        console.log("------ Scaling Image Section ------");
-        console.table(statistics);
-
         // scale down the image container, failsafe fallback of opacity 1 if it doesnt animate perfectly to there from before or after
         scaleDownImgContainer.style.height = `${scaleDownImgContainerHeightPercent}%`;
         scaleDownImgContainer.style.minHeight = `${heightChangeFinalPercent}%`;
