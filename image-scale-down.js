@@ -53,7 +53,7 @@ function imageScaleDown() {
     const scaleDownImgHeightPercent = scaleDownImgHeightStartingValue - (yPercent * (-((scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue) / 100)) * 100);
 
     // cleaner formula but not as readable for troubleshooting
-    const maxHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
+    const scaleDownImgHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
 
     const statistics = {
         currentPosition: `${currentPosition}`,
@@ -69,9 +69,7 @@ function imageScaleDown() {
         scaleDownImgHeightPercent: scaleDownImgHeightPercent,
         startScale: startScale,
         endScale: endScale,
-        maxHeightPercentSimplified: `${maxHeightPercentSimplified}`,
-        startingMinusEndingHeight: `${startingMinusEndingHeight}`,
-        startingMinusEndingWidth: `${startingMinusEndingWidth}`
+        scaleDownImgHeightPercentSimplified: `${scaleDownImgHeightPercentSimplified}`,
     }
         
     console.log("------ Scaling Image Section ------");
