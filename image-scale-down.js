@@ -98,7 +98,7 @@ function imageScaleDown() {
     }
 
     // as we approach our starting point or we back peddle toward our ending point, we update our willChange css property to prep the browser for our animation
-    if( currentPosition > applyWillChangeSettings && currentPosition < applyWillChangeSettingsExit ) {
+    if( currentPosition > applyWillChangeSettingsEntry && currentPosition < applyWillChangeSettingsExit ) {
         // compare the computed value to a setting of auto, if they are auto replace auto with the following
         if ( scaleDownImgContainerWillChangeSettings === willChangeAutoSetting && scaleDownImgWillChangeSettings === willChangeAutoSetting ) {
             scaleDownImgContainer.style.willChange = `${desiredWillChangeSettings}`;
