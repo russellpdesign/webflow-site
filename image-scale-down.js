@@ -55,6 +55,9 @@ function imageScaleDown() {
     // cleaner formula but not as readable for troubleshooting
     const scaleDownImgHeightPercentSimplified = scaleDownImgHeightStartingValue + yPercent * (scaleDownImgHeightEndingValue - scaleDownImgHeightStartingValue);
 
+    const scaleDownImgContainerWillChangeSettings = window.getComputedStyle(scaleDownImgContainer).willChange;
+    const scaleDownImgWillChangeSettings = window.getComputedStyle(scaleDownImg).willChange;
+
     const statistics = {
         currentPosition: `${currentPosition}`,
         yPercent: `${yPercent}`,
@@ -70,21 +73,24 @@ function imageScaleDown() {
         startScale: startScale,
         endScale: endScale,
         scaleDownImgHeightPercentSimplified: `${scaleDownImgHeightPercentSimplified}`,
+        scaleDownImgContainerWillChangeSettings: scaleDownImgContainerWillChangeSettings,
+        scaleDownImgWillChangeSettings: scaleDownImgWillChangeSettings,
+        testingAddingWillChangeBeforeAndAfters: scaleDownImgWillChangeSettings + "transform, height, width",
     }
-        
+
     console.log("------ Scaling Image Section ------");
     console.table(statistics);
 
-    scaleDownImgContainer.style.willChange = "transform, height, width";
-    scaleDownImg.style.willChange = "transform, height, width";
-
+    // if our location is before our scaling transformation, ensure our style properties are set to their pre-transformation settings
+    // this is mainly to handle the page if we scroll back up before our scale transformation
     if( currentPosition < startScale ) {
-        // console.log("set height and width to original value")
         scaleDownImgContainer.style.height = ``;
         scaleDownImgContainer.style.width = ``;
         scaleDownImgContainer.style.opacity = "1";
         itemImageWrap.style.opacity = "1";
         scaleDownImg.style.height = "120%";
+        scaleDownImgContainer.style.willChange = "transform, height, width";
+        scaleDownImg.style.willChange = "transform, height, width";
     }
 
     if ( currentPosition > startScale ) {
