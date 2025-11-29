@@ -8,8 +8,11 @@ const endingImageDebug = document.querySelector("#scale-down-img-after");
 const endingImageXPosition = endingImageDebug.getBoundingClientRect().left;
 const endingImageYPosition = endingImageDebug.getBoundingClientRect().top;
 
-console.log(`before imgContainer Position ---> x: ${imgContainerXPosition} y: ${imgContainerYPosition}`);
-console.log(`afterwards img Position ---> x: ${endingImageXPosition} y: ${endingImageYPosition}`);
+const beforeImgCoords = `before imgContainer Position ---> x: ${imgContainerXPosition} y: ${imgContainerYPosition}`;
+const afterImgCoords = `afterwards img Position ---> x: ${endingImageXPosition} y: ${endingImageYPosition}`
+
+console.log(beforeImgCoords);
+console.log(afterImgCoords);
 
 // handles animation logic
 function imageScaleDown() {
