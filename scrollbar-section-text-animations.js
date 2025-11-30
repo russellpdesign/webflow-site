@@ -27,6 +27,7 @@ function animateTextElements() {
       start: start,
       secondStart: secondStart,
       thirdStart: thirdStart,
+      end: end,
     }
 
     console.log("------ Scrollbar Section Text Animations ------");
