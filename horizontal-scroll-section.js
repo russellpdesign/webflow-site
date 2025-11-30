@@ -1,5 +1,4 @@
 // horizontal sticky scroll animation
-
 function horizontalStickyScroll(e) {
 
     // div with class of horizontal-scroll-product, largest div for this animation
@@ -73,6 +72,9 @@ function horizontalStickyScroll(e) {
         textAnimationTriggerThree: textAnimationTriggerThree,
         scrollTriggerThree: scrollTriggerThree,
     }
+
+    // console.log("------ Horizontal Scroll Section ------");
+    // console.table(stats);
     
     // helper function to animate the dropdown rows individually using an array containing of all of them
     function addActive(domNodelist, toggleDesired, index) {
@@ -83,15 +85,10 @@ function horizontalStickyScroll(e) {
         }
     };
 
-
-		console.log("------ Horizontal Scroll Section ------");
-    console.table(stats);
-
     if( (sectionTopPosition > viewportHeight && currentPosition < sectionStart) || ( -sectionTopPosition > sectionHeight ) ){
         return;
     } else {
         requestAnimationFrame(animateScroll);
-
         // need to trigger dropdown to fully collapse before animating out
     }
 
