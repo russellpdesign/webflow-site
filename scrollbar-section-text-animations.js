@@ -23,6 +23,14 @@ function animateTextElements() {
     const secondStart = start + viewportHeight;
     const thirdStart = start + (viewportHeight *2);
 
+    const stats = {
+      start: start,
+      secondStart: secondStart,
+      thirdStart: thirdStart,
+    }
+
+    console.log("------ Vertical Scrolling Slider Section Text Animation ------");
+    console.log(stats)
 
     if ( currentPosition < start ) {
     titleItems.forEach(item => { item.classList.remove("is-active") });
