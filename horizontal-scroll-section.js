@@ -71,8 +71,8 @@ function horizontalStickyScroll(e) {
         scrollTriggerThree: scrollTriggerThree,
     }
     
-		console.log("------ Horizontal Scroll Section ------");
-    console.table(stats);
+	// console.log("------ Horizontal Scroll Section ------");
+    // console.table(stats);
     
     // helper function to animate the dropdown rows individually using an array containing of all of them
     function addActive(domNodelist, toggleDesired, index) {
