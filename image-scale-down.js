@@ -85,8 +85,8 @@ function imageScaleDown() {
         desiredWillChangeSettings: desiredWillChangeSettings,
     }
 
-    console.log("------ Scaling Image Section ------");
-    console.table(statistics);
+    // console.log("------ Scaling Image Section ------");
+    // console.table(statistics);
 
     // if our location is before our scaling transformation, ensure our style properties are set to their pre-transformation settings (this is mainly to handle the page if we scroll back up before our scale transformation)
     if( currentPosition < startScale ) {
