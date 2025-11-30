@@ -29,8 +29,8 @@ function animateTextElements() {
       thirdStart: thirdStart,
     }
 
-    console.log("------ Vertical Scrolling Slider Section Text Animation ------");
-    console.log(stats)
+    console.log("------ Scrollbar Section Text Animations ------");
+    console.table(stats)
 
     if ( currentPosition < start ) {
     titleItems.forEach(item => { item.classList.remove("is-active") });
