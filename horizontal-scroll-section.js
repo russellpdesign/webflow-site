@@ -1,6 +1,4 @@
-// horizontal sticky scroll animation
 function horizontalStickyScroll(e) {
-
     // div with class of horizontal-scroll-product, largest div for this animation
     const parentSection = document.querySelector("#service-scroll");
     const parentSectionDimensions = parentSection.getBoundingClientRect();
@@ -72,9 +70,9 @@ function horizontalStickyScroll(e) {
         textAnimationTriggerThree: textAnimationTriggerThree,
         scrollTriggerThree: scrollTriggerThree,
     }
-
-    // console.log("------ Horizontal Scroll Section ------");
-    // console.table(stats);
+    
+		console.log("------ Horizontal Scroll Section ------");
+    console.table(stats);
     
     // helper function to animate the dropdown rows individually using an array containing of all of them
     function addActive(domNodelist, toggleDesired, index) {
@@ -89,7 +87,6 @@ function horizontalStickyScroll(e) {
         return;
     } else {
         requestAnimationFrame(animateScroll);
-        // need to trigger dropdown to fully collapse before animating out
     }
 
     // SECTION ONE
@@ -122,7 +119,7 @@ function horizontalStickyScroll(e) {
         const smallTitle = section.querySelector(".medium-big-text");
         const bigTitle = section.querySelector(".big-text");
         const dropdownHeaderContainers = Array.from(section.querySelectorAll(".dropdown-header-container"));
-      	// console.log(dropdownHeaderContainers);
+      	console.log(dropdownHeaderContainers);
       
         // add active to start animation
         if( currentPosition >= textAnimationTrigger ) {
@@ -146,7 +143,7 @@ function horizontalStickyScroll(e) {
         smallTitle.classList.remove("active");
         bigTitle.classList.remove("active");
         // remove dropdown rows staggering there transforms
-        setTimeout(addActive, 0, dropdownHeaderContainers, "remove", 2);
+         setTimeout(addActive, 0, dropdownHeaderContainers, "remove", 2);
         setTimeout(addActive, 100, dropdownHeaderContainers, "remove", 1);
         setTimeout(addActive, 150, dropdownHeaderContainers, "remove", 0);
         
@@ -334,4 +331,8 @@ if(currentPosition > sectionEnd) {
   
     }  // ends animateScroll function
 
-} // end of horizontal scroll function
+} // end of entire function
+
+// end horizontal sticky scroll animation
+// end horizontal sticky scroll animation
+// end horizontal sticky scroll animation
