@@ -18,7 +18,7 @@ function moveScrollBar() {
     // ANIMATION FORMULAS
     const yPercent = (((currentPosition - startTrigger) / (endTrigger - startTrigger)) * 100) * 2;
 
-    /* to troubleshoot issues with this script, use the following
+    // to troubleshoot issues with this script, use the following
 
     const vertScrollBarStats = {
         elementToAnimateClassName: `${elementToAnimateClassName}`,
@@ -33,7 +33,7 @@ function moveScrollBar() {
 
     console.log("------ Vertical Scrolling Slider Bar ------");
     console.table(vertScrollBarStats);
-    */
+    
 
         // scrollbar handling
         if ( currentPosition >= startTrigger && currentPosition <= endTrigger ) {
