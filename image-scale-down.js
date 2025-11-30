@@ -10,7 +10,7 @@ const endingImageDebug = document.querySelector("#scale-down-img-after");
 const endingImageXPosition = (endingImageDebug) => { return endingImageDebug.getBoundingClientRect().left };
 const endingImageYPosition = (endingImageDebug) => { return endingImageDebug.getBoundingClientRect().top };
 
-const beforeImgCoords = `before img Position ---> x: ${imgContainerTop} y: ${imgContainerYPosition}`;
+const beforeImgCoords = `before img Position ---> x: ${imgContainerTop} y: ${imgContainerLeft}`;
 const afterImgCoords = `afterwards img Position ---> x: ${endingImageXPosition} y: ${endingImageYPosition}`;
 
 console.log(beforeImgCoords);
