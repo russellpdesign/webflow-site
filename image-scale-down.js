@@ -1,12 +1,12 @@
 // our images in the section above our horizontal scroll section that scale down into position where our horizontal scroll image is
 const scaleDownImgDebug = document.querySelector("#scale-down-img");
 const scaleDownImgContainerDebug = document.querySelector(".big-absolute-img");
-let imgContainerXPosition = scaleDownImgContainerDebug.getBoundingClientRect().left;
-let imgContainerYPosition = scaleDownImgContainerDebug.getBoundingClientRect().top;
+const imgContainerXPosition = () => scaleDownImgContainerDebug.getBoundingClientRect().left;
+const imgContainerYPosition = () => scaleDownImgContainerDebug.getBoundingClientRect().top;
 // the image in our horizontal scroll section
 const endingImageDebug = document.querySelector("#scale-down-img-after");
-let endingImageXPosition = endingImageDebug.getBoundingClientRect().left;
-let endingImageYPosition = endingImageDebug.getBoundingClientRect().top;
+const endingImageXPosition = () => endingImageDebug.getBoundingClientRect().left;
+const endingImageYPosition = () => endingImageDebug.getBoundingClientRect().top;
 
 const beforeImgCoords = `before imgContainer Position ---> x: ${imgContainerXPosition} y: ${imgContainerYPosition}`;
 const afterImgCoords = `afterwards img Position ---> x: ${endingImageXPosition} y: ${endingImageYPosition}`
