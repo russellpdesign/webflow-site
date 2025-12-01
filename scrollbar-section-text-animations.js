@@ -2,7 +2,7 @@ function animateTextElements() {
 
     const progressBarInside = document.querySelector(".vertical-progress-bar-inside");
     const homeScrollSection = document.querySelector(".home-scroll-section.is-don");
-    const currentPosition = window.scrollY;
+    // const currentPosition = window.scrollY;
     // To get height of section we measure the height of all the triggers (since it takes one trigger per one 100vh sticky section in this type of section)
     const triggers = document.querySelectorAll(".overview_trigger");
     const triggersHeight = triggers[0].getBoundingClientRect().height * triggers.length;
