@@ -8,6 +8,23 @@ gsap.to(".load_columns-item", {
   },
 });
 
+// 1. Save scroll position on scroll (with debounce)
+let timeout;
+window.addEventListener("scroll", () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        localStorage.setItem("scrollY", window.scrollY);
+    }, 200); // Saves after 200ms of no scrolling
+});
+
+// 2. Restore on page load
+window.addEventListener("load", () => {
+    const savedY = localStorage.getItem("scrollY");
+    if (savedY !== null) {
+        window.scrollTo(0, parseInt(savedY));
+    }
+});
+
 $(document).ready(function () {
   $("a").on("click", function (e) {
     console.log($(this).attr("href").indexOf("#"));
