@@ -43,6 +43,11 @@ $(document).ready(function () {
         "The projects link was clicked, and I am not on the Home page - site wide code embed"
       );
       e.preventDefault();
+      
+      function lockScroll() {
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+      }
 
       lockScroll();
 
