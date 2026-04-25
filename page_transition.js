@@ -43,7 +43,11 @@ $(document).ready(function () {
         "The projects link was clicked, and I am not on the Home page - site wide code embed"
       );
       e.preventDefault();
+
+      lockScroll();
+
       let destination = $(this).attr("href");
+
       gsap.set(".load_columns", { display: "grid" });
       gsap.fromTo(
         ".load_columns-item",
