@@ -18,6 +18,14 @@ $(document).ready(function () {
     ) {
       console.log("this is the page leave columns animation");
       e.preventDefault();
+
+      function lockScroll() {
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
+      }
+
+      lockScroll();
+      
       let destination = $(this).attr("href");
       gsap.set(".load_columns", { display: "grid" });
       gsap.fromTo(
