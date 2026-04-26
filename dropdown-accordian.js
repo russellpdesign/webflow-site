@@ -31,17 +31,17 @@
 function chooseFunction() {
   const currentPosition = window.scrollY;
   const start = document.querySelector("#service-scroll").getBoundingClientRect().top + currentPosition ;
-  console.log(start);
-  console.log(`inside chooseFunction our lastRowClicked: ${lastRowClicked}`);
+  // console.log(start);
+  // console.log(`inside chooseFunction our lastRowClicked: ${lastRowClicked}`);
 
   if (currentPosition > start) {
-    console.log("the dropdown should now be functional")
+    // console.log("the dropdown should now be functional")
     headerContainers.forEach(headerRow => addEventListener("click", startDropdown));
    // startDropdown(e);
   } 
   
   if (currentPosition < start) {
-    console.log("the dropdown should collapse all open rows")
+    // console.log("the dropdown should collapse all open rows")
     rows.forEach((row) => { row.style.height = containerCloseHeightSettings });
     rows.forEach((row) => { row.style.transition = containerCloseTransitionSettings });
     plusSignContainers.forEach((container) => { container.style.transform = plusSignCloseTransformSettings});
@@ -61,22 +61,22 @@ function startDropdown(e) {
     // console.log(headerContainers, rows);
 
     const clickedElement = e.target?.offsetParent;
-    console.log(clickedElement);
+    // console.log(clickedElement);
     let currentRowClicked = headerContainers.indexOf(clickedElement);
-    console.log(currentRowClicked);
+    // console.log(currentRowClicked);
     const parentRow = clickedElement?.offsetParent;
-    console.log(parentRow)
+    // console.log(parentRow)
     const parentRowIndex = rows.indexOf(parentRow);
-    console.log(parentRowIndex);
+    // console.log(parentRowIndex);
 
-    console.log(`inside startDropdown function our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
+    // console.log(`inside startDropdown function our lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
 
     // if our target is not the dropdown, we dont run the function)
     let result = parentRow?.classList.contains(dropdownsRowsClassName);
     let resultTwo = parentRow?.classList.contains(headerContainerClassName);
     let resultThree = parentRow?.classList.contains(dropdownWrapperClassName);
     // let resultOption2 = e.target.offsetPare.nt?.classList.contains(dropdownRowsClassName);
-    console.log(result, resultTwo, resultThree);
+    // console.log(result, resultTwo, resultThree);
 
     if ( result || resultTwo || resultThree ) {
       e.preventDefault();
@@ -104,7 +104,7 @@ function startDropdown(e) {
       const vertPlusPartOpenTransitionSettings = "transform .5s ease";
       
       const otherItemsArray = rows.filter(item => item !== rows[currentRowClicked]);
-      console.log(otherItemsArray);
+      // console.log(otherItemsArray);
 
       function openAccordianItem() {
               parentRow.style.height = containerOpenHeightSettings;
@@ -169,7 +169,7 @@ function startDropdown(e) {
           
 
         lastRowClicked = parentRowIndex;
-        console.log(`inside our dropdown function after we have ran our function lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
+        // console.log(`inside our dropdown function after we have ran our function lastRowClicked: ${lastRowClicked}`, `currentRowClicked: ${currentRowClicked}`);
         return lastRowClicked, dropdownIsOpen;
     
      } // ends result if statement
