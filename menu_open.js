@@ -114,9 +114,9 @@ function menuDisplay(event) {
     console.log("isOpen should now be set back to false");
     isOpen = false;
 
-    setTimeout(clearedTimer, 1000);
+    setTimeout(clearedTimer, 800);
 
-    // this function checks if it has changed to false, and if it has, it removes that additional clicked class to allow them to be clicked again...after 1.5seconds)
+    // this function checks if it has changed to false, and if it has, it removes that additional clicked class to allow them to be clicked again after a setTimeout amount)
     // it then ends the functions and you can wait to hear another click again
 
     function clearedTimer() {
